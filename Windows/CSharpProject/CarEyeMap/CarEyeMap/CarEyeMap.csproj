@@ -71,7 +71,6 @@
     <Content Include="logo.ico" />
     <Content Include="MapHtml\BdPublic.js" />
     <Content Include="MapHtml\Hashtable.js" />
-    <Content Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
