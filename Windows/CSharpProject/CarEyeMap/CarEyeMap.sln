@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarEyeMap", "CarEyeMap\CarEyeMap.csproj", "{D2D5B96D-9F3D-4A6D-B25C-BEE690672826}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarEyeMap.Demo", "CarEyeMap.Demo\CarEyeMap.Demo.csproj", "{6EFB450F-41E9-4D4F-AB5B-9B3DCB831233}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2D5B96D-9F3D-4A6D-B25C-BEE690672826}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2D5B96D-9F3D-4A6D-B25C-BEE690672826}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2D5B96D-9F3D-4A6D-B25C-BEE690672826}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2D5B96D-9F3D-4A6D-B25C-BEE690672826}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EFB450F-41E9-4D4F-AB5B-9B3DCB831233}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EFB450F-41E9-4D4F-AB5B-9B3DCB831233}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EFB450F-41E9-4D4F-AB5B-9B3DCB831233}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EFB450F-41E9-4D4F-AB5B-9B3DCB831233}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A8995BA-2D27-4568-B091-9017FC7EDBBE}
+	EndGlobalSection
+EndGlobal
