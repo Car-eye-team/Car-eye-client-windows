@@ -13,7 +13,7 @@ namespace CarEyeMap
 		/// </summary>
 		public static readonly Coordinate DEFAULT = new Coordinate(113.875779, 22.581783);
 		/// <summary>
-		/// 百度地图的APP Key
+		/// 百度地图的APP Key, 此处请使用自己申请的百度地图AK,该AK有使用次数限制
 		/// </summary>
 		private const string BaiduKey = "Nf3lxFZIRCSgC6P57tUyGO3waw7kWw2w";
 		/// <summary>
