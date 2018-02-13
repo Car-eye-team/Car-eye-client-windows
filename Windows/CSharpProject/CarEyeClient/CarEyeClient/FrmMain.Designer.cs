@@ -1,6 +1,6 @@
 ﻿namespace CarEyeClient
 {
-	partial class FrmBase
+	partial class FrmMain
 	{
 		/// <summary>
 		/// 必需的设计器变量。
@@ -23,23 +23,19 @@
 		#region Windows 窗体设计器生成的代码
 
 		/// <summary>
-		/// 设计器支持所需的方法 - 不要
+		/// 设计器支持所需的方法 - 不要修改
 		/// 使用代码编辑器修改此方法的内容。
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBase));
 			this.SuspendLayout();
 			// 
-			// FrmBase
+			// FrmMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(584, 411);
-			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.Name = "FrmBase";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "基础窗口";
+			this.ClientSize = new System.Drawing.Size(963, 682);
+			this.Name = "FrmMain";
+			this.Text = "CarEye车辆监控系统";
 			this.ResumeLayout(false);
 
 		}
@@ -47,4 +43,3 @@
 		#endregion
 	}
 }
-

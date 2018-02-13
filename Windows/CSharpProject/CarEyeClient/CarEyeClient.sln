@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2009
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{63f238bc-6aca-42a4-aba6-00a32a5d5167}") = "CarEyeClient", "CarEyeClient\CarEyeClient.csproj", "4C82F240-891C-4E1D-AC28-6C7087E98ECA"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarEyeClient", "CarEyeClient\CarEyeClient.csproj", "{4C82F240-891C-4E1D-AC28-6C7087E98ECA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {2673ae94-a98e-4e4d-b6e3-44daeffb2bfb}
+		SolutionGuid = {2673AE94-A98E-4E4D-B6E3-44DAEFFB2BFB}
 	EndGlobalSection
 EndGlobal
