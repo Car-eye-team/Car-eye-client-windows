@@ -35,7 +35,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.ClientSize = new System.Drawing.Size(963, 682);
 			this.Name = "FrmMain";
-			this.Text = "CarEye车辆监控系统";
+			this.Text = "车辆监控系统";
 			this.ResumeLayout(false);
 
 		}

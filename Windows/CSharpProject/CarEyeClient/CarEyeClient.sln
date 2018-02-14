@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarEyeClient", "CarEyeClient\CarEyeClient.csproj", "{4C82F240-891C-4E1D-AC28-6C7087E98ECA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarEyeClient.Model", "CarEyeClient.Model\CarEyeClient.Model.csproj", "{63AA1233-2080-4A1D-B0B3-4F88ED3F0C60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{4C82F240-891C-4E1D-AC28-6C7087E98ECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C82F240-891C-4E1D-AC28-6C7087E98ECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C82F240-891C-4E1D-AC28-6C7087E98ECA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63AA1233-2080-4A1D-B0B3-4F88ED3F0C60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63AA1233-2080-4A1D-B0B3-4F88ED3F0C60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63AA1233-2080-4A1D-B0B3-4F88ED3F0C60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63AA1233-2080-4A1D-B0B3-4F88ED3F0C60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

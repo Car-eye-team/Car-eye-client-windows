@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Diagnostics;
+using CarEyeClient.Utils;
 
 namespace CarEyeClient
 {
@@ -13,6 +15,8 @@ namespace CarEyeClient
 		public FrmMain()
 		{
 			InitializeComponent();
+			this.Text = $"{GlobalCfg.Title}[{GlobalCfg.Version}]";
+//			Debug.WriteLine(UrlApiHelper.GetLastPosition(GlobalCfg.TerminalId));
 		}
 	}
 }

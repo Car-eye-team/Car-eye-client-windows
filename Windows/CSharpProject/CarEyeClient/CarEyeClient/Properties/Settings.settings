@@ -1,7 +1,12 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CarEyeClient.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SvrIp" Description="当前连接的服务器IP地址" Type="System.String" Scope="User">
+      <Value Profile="(Default)">39.108.246.45</Value>
+    </Setting>
+    <Setting Name="SvrPort" Description="当前连接服务器的端口号" Type="System.UInt16" Scope="User">
+      <Value Profile="(Default)">801</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>
