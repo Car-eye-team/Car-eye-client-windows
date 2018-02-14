@@ -24,6 +24,22 @@ namespace CarEyeClient
 		}
 
 		/// <summary>
+		/// 本应用程序的公司名称
+		/// </summary>
+		public static string Company
+		{
+			get
+			{
+				object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCompanyAttribute), false);
+				if (attributes.Length == 0)
+				{
+					return "";
+				}
+				return ((AssemblyCompanyAttribute)attributes[0]).Company;
+			}
+		}
+
+		/// <summary>
 		/// 获取本应用程序的版本号
 		/// </summary>
 		public static string Version

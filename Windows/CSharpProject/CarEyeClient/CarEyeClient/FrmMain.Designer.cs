@@ -28,18 +28,73 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
+			this.dockMain = new WeifenLuo.WinFormsUI.Docking.DockPanel();
+			this.statusBar = new System.Windows.Forms.StatusStrip();
+			this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+			this.车辆信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.statusBar.SuspendLayout();
 			this.SuspendLayout();
+			// 
+			// dockMain
+			// 
+			this.dockMain.DefaultFloatWindowSize = new System.Drawing.Size(800, 600);
+			this.dockMain.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dockMain.Location = new System.Drawing.Point(0, 0);
+			this.dockMain.Name = "dockMain";
+			this.dockMain.Size = new System.Drawing.Size(963, 682);
+			this.dockMain.TabIndex = 0;
+			// 
+			// statusBar
+			// 
+			this.statusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripDropDownButton1});
+			this.statusBar.Location = new System.Drawing.Point(0, 659);
+			this.statusBar.Name = "statusBar";
+			this.statusBar.Size = new System.Drawing.Size(963, 23);
+			this.statusBar.TabIndex = 6;
+			this.statusBar.Text = "statusStrip1";
+			// 
+			// toolStripDropDownButton1
+			// 
+			this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.车辆信息ToolStripMenuItem});
+			this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+			this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+			this.toolStripDropDownButton1.Size = new System.Drawing.Size(69, 21);
+			this.toolStripDropDownButton1.Text = "系统菜单";
+			// 
+			// 车辆信息ToolStripMenuItem
+			// 
+			this.车辆信息ToolStripMenuItem.Name = "车辆信息ToolStripMenuItem";
+			this.车辆信息ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+			this.车辆信息ToolStripMenuItem.Text = "车辆信息";
 			// 
 			// FrmMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.ClientSize = new System.Drawing.Size(963, 682);
+			this.Controls.Add(this.statusBar);
+			this.Controls.Add(this.dockMain);
+			this.IsMdiContainer = true;
 			this.Name = "FrmMain";
 			this.Text = "车辆监控系统";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
+			this.Load += new System.EventHandler(this.FrmMain_Load);
+			this.statusBar.ResumeLayout(false);
+			this.statusBar.PerformLayout();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
 		#endregion
+
+		private WeifenLuo.WinFormsUI.Docking.DockPanel dockMain;
+		private System.Windows.Forms.StatusStrip statusBar;
+		private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+		private System.Windows.Forms.ToolStripMenuItem 车辆信息ToolStripMenuItem;
 	}
 }

@@ -50,8 +50,12 @@
     <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CarEyeMap">
+      <HintPath>..\..\CarEyeMap\CarEyeMap\bin\Debug\CarEyeMap.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,13 +64,34 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=3.0.2.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
+      <HintPath>..\packages\DockPanelSuite.3.0.2\lib\net40\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DlgLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DlgLogin.Designer.cs">
+      <DependentUpon>DlgLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmBase.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmBase.Designer.cs">
       <DependentUpon>FrmBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmChild.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChild.Designer.cs">
+      <DependentUpon>FrmChild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDVR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDVR.Designer.cs">
+      <DependentUpon>FrmDVR.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
@@ -74,15 +99,35 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMap.Designer.cs">
+      <DependentUpon>FrmMap.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlobalCfg.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\GuiHelper.cs" />
+    <Compile Include="Utils\MapHelper.cs" />
     <Compile Include="Utils\UrlApiHelper.cs" />
+    <EmbeddedResource Include="DlgLogin.resx">
+      <DependentUpon>DlgLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBase.resx">
       <DependentUpon>FrmBase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmChild.resx">
+      <DependentUpon>FrmChild.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDVR.resx">
+      <DependentUpon>FrmDVR.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMap.resx">
+      <DependentUpon>FrmMap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -92,8 +137,10 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -106,6 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo.ico" />
+    <Content Include="MapPage\BdMain.js" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
