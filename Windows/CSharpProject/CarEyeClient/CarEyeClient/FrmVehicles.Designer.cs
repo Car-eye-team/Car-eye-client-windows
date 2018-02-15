@@ -30,23 +30,30 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.dgvVechiles = new System.Windows.Forms.DataGridView();
+			this.mnuRight = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.mnuRequest = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuTrack = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuDVR = new System.Windows.Forms.ToolStripMenuItem();
 			this.LicensePlate = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.TerminalId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.StatusDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.TypeDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Speed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Mileage = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Direction = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Altitude = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Longitude = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Latitude = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Mileage = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.LocationTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.mnuRight = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.UpdateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgvVechiles)).BeginInit();
+			this.mnuRight.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// dgvVechiles
@@ -72,21 +79,23 @@
             this.StatusDescription,
             this.TypeDescription,
             this.Speed,
+            this.Mileage,
             this.Direction,
             this.Altitude,
             this.Longitude,
             this.Latitude,
             this.Address,
-            this.Mileage,
-            this.LocationTime});
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvVechiles.DefaultCellStyle = dataGridViewCellStyle3;
+            this.LocationTime,
+            this.UpdateTime});
+			this.dgvVechiles.ContextMenuStrip = this.mnuRight;
+			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle5.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvVechiles.DefaultCellStyle = dataGridViewCellStyle5;
 			this.dgvVechiles.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dgvVechiles.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
 			this.dgvVechiles.Location = new System.Drawing.Point(0, 0);
@@ -102,12 +111,41 @@
 			this.dgvVechiles.TabIndex = 0;
 			this.dgvVechiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVechiles_CellDoubleClick);
 			// 
+			// mnuRight
+			// 
+			this.mnuRight.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuTrack,
+            this.mnuDVR,
+            this.mnuRequest});
+			this.mnuRight.Name = "mnuRight";
+			this.mnuRight.Size = new System.Drawing.Size(125, 70);
+			// 
+			// mnuRequest
+			// 
+			this.mnuRequest.Name = "mnuRequest";
+			this.mnuRequest.Size = new System.Drawing.Size(124, 22);
+			this.mnuRequest.Text = "点 名";
+			this.mnuRequest.Click += new System.EventHandler(this.mnuRequest_Click);
+			// 
+			// mnuTrack
+			// 
+			this.mnuTrack.Name = "mnuTrack";
+			this.mnuTrack.Size = new System.Drawing.Size(124, 22);
+			this.mnuTrack.Text = "轨迹回放";
+			// 
+			// mnuDVR
+			// 
+			this.mnuDVR.Name = "mnuDVR";
+			this.mnuDVR.Size = new System.Drawing.Size(124, 22);
+			this.mnuDVR.Text = "视频预览";
+			// 
 			// LicensePlate
 			// 
 			this.LicensePlate.DataPropertyName = "LicensePlate";
 			this.LicensePlate.HeaderText = "车牌号码";
 			this.LicensePlate.Name = "LicensePlate";
 			this.LicensePlate.ReadOnly = true;
+			this.LicensePlate.Width = 80;
 			// 
 			// TerminalId
 			// 
@@ -122,6 +160,7 @@
 			this.StatusDescription.HeaderText = "状态";
 			this.StatusDescription.Name = "StatusDescription";
 			this.StatusDescription.ReadOnly = true;
+			this.StatusDescription.Width = 80;
 			// 
 			// TypeDescription
 			// 
@@ -129,13 +168,24 @@
 			this.TypeDescription.HeaderText = "终端类型";
 			this.TypeDescription.Name = "TypeDescription";
 			this.TypeDescription.ReadOnly = true;
+			this.TypeDescription.Width = 80;
 			// 
 			// Speed
 			// 
 			this.Speed.DataPropertyName = "Speed";
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			this.Speed.DefaultCellStyle = dataGridViewCellStyle2;
 			this.Speed.HeaderText = "速度(Km/h)";
 			this.Speed.Name = "Speed";
 			this.Speed.ReadOnly = true;
+			this.Speed.Width = 90;
+			// 
+			// Mileage
+			// 
+			this.Mileage.DataPropertyName = "Mileage";
+			this.Mileage.HeaderText = "行驶里程(Km)";
+			this.Mileage.Name = "Mileage";
+			this.Mileage.ReadOnly = true;
 			// 
 			// Direction
 			// 
@@ -143,6 +193,7 @@
 			this.Direction.HeaderText = "方向";
 			this.Direction.Name = "Direction";
 			this.Direction.ReadOnly = true;
+			this.Direction.Width = 60;
 			// 
 			// Altitude
 			// 
@@ -150,6 +201,7 @@
 			this.Altitude.HeaderText = "海拔(m)";
 			this.Altitude.Name = "Altitude";
 			this.Altitude.ReadOnly = true;
+			this.Altitude.Width = 70;
 			// 
 			// Longitude
 			// 
@@ -171,30 +223,29 @@
 			this.Address.HeaderText = "详细位置";
 			this.Address.Name = "Address";
 			this.Address.ReadOnly = true;
-			this.Address.Width = 200;
-			// 
-			// Mileage
-			// 
-			this.Mileage.DataPropertyName = "Mileage";
-			this.Mileage.HeaderText = "行驶里程(Km)";
-			this.Mileage.Name = "Mileage";
-			this.Mileage.ReadOnly = true;
+			this.Address.Width = 220;
 			// 
 			// LocationTime
 			// 
 			this.LocationTime.DataPropertyName = "LocationTime";
-			dataGridViewCellStyle2.Format = "G";
-			dataGridViewCellStyle2.NullValue = null;
-			this.LocationTime.DefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle3.Format = "G";
+			dataGridViewCellStyle3.NullValue = null;
+			this.LocationTime.DefaultCellStyle = dataGridViewCellStyle3;
 			this.LocationTime.HeaderText = "定位时间";
 			this.LocationTime.Name = "LocationTime";
 			this.LocationTime.ReadOnly = true;
 			this.LocationTime.Width = 140;
 			// 
-			// mnuRight
+			// UpdateTime
 			// 
-			this.mnuRight.Name = "mnuRight";
-			this.mnuRight.Size = new System.Drawing.Size(153, 26);
+			this.UpdateTime.DataPropertyName = "UpdateTime";
+			dataGridViewCellStyle4.Format = "G";
+			dataGridViewCellStyle4.NullValue = null;
+			this.UpdateTime.DefaultCellStyle = dataGridViewCellStyle4;
+			this.UpdateTime.HeaderText = "信息更新时间";
+			this.UpdateTime.Name = "UpdateTime";
+			this.UpdateTime.ReadOnly = true;
+			this.UpdateTime.Width = 140;
 			// 
 			// FrmVehicles
 			// 
@@ -211,6 +262,7 @@
 			this.TabText = "车辆详情";
 			this.Text = "车辆详情";
 			((System.ComponentModel.ISupportInitialize)(this.dgvVechiles)).EndInit();
+			this.mnuRight.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -218,18 +270,22 @@
 		#endregion
 
 		private System.Windows.Forms.DataGridView dgvVechiles;
+		private System.Windows.Forms.ContextMenuStrip mnuRight;
+		private System.Windows.Forms.ToolStripMenuItem mnuTrack;
+		private System.Windows.Forms.ToolStripMenuItem mnuDVR;
+		private System.Windows.Forms.ToolStripMenuItem mnuRequest;
 		private System.Windows.Forms.DataGridViewTextBoxColumn LicensePlate;
 		private System.Windows.Forms.DataGridViewTextBoxColumn TerminalId;
 		private System.Windows.Forms.DataGridViewTextBoxColumn StatusDescription;
 		private System.Windows.Forms.DataGridViewTextBoxColumn TypeDescription;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Speed;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Mileage;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Direction;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Altitude;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Longitude;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Latitude;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Address;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Mileage;
 		private System.Windows.Forms.DataGridViewTextBoxColumn LocationTime;
-		private System.Windows.Forms.ContextMenuStrip mnuRight;
+		private System.Windows.Forms.DataGridViewTextBoxColumn UpdateTime;
 	}
 }

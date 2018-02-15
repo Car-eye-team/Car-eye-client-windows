@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Runtime.Serialization;
 
 namespace CarEyeClient.Model
 {
@@ -101,5 +102,10 @@ namespace CarEyeClient.Model
 				return ((TerminalType)TerminalType[0]).ToDescription();
 			}
 		}
+
+		/// <summary>
+		/// 信息更新时间
+		/// </summary>
+		public DateTime UpdateTime { get; set; }
 	}
 }

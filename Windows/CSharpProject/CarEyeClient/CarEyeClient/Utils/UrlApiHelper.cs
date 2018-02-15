@@ -67,6 +67,7 @@ namespace CarEyeClient.Utils
 			JsonLastPosition lastLocation = ModelUtils.GetJsonObject<JsonLastPosition>(jsonStr);
 			if (lastLocation != null)
 			{
+				lastLocation.UpdateTime = DateTime.Now;
 				return lastLocation;
 			}
 			JsonBase errInfo = ModelUtils.GetJsonObject<JsonBase>(jsonStr);
