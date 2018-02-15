@@ -11,32 +11,38 @@ namespace CarEyeClient
 	/// </summary>
 	public partial class FrmMap : FrmChild
 	{
-		public FrmMap()
+		/// <summary>
+		/// 主窗体
+		/// </summary>
+		private FrmMain mParent;
+
+		public FrmMap(FrmMain aParent)
 		{
 			InitializeComponent();
 			// 添加本实例指定的JS代码
 			this.wbMap.JsCode = MapHelper.GetMainMap();
+			mParent = aParent;
 		}
 		
 		/// <summary>
 		/// 定位车辆到地图中
 		/// </summary>
-		/// <param name="aInfo"></param>
+		/// <param name="aLocation"></param>
 		/// <param name="aIsCenter"></param>
-		public void LocatedVehicle(JsonLastPosition aInfo, bool aIsCenter = true)
+		public void LocatedVehicle(JsonLastPosition aLocation, bool aIsCenter = true)
 		{
-			if (aInfo == null)
+			if (aLocation == null)
 			{
 				return;
 			}
 
 			this.wbMap.BeginInvokeIfRequired((map) =>
 			{
-				map.LocatedVehicle(aInfo);
+				map.LocatedVehicle(aLocation);
 
 				if (aIsCenter)
 				{
-					map.SetCenter(aInfo.BdLongitude, aInfo.BdLatitude);
+					map.SetCenter(aLocation.BdLongitude, aLocation.BdLatitude);
 				}
 			});
 		}

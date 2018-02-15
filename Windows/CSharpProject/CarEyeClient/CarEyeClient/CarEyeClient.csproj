@@ -93,6 +93,9 @@
     <Compile Include="FrmDVR.Designer.cs">
       <DependentUpon>FrmDVR.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMain.Api.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +107,12 @@
     </Compile>
     <Compile Include="FrmMap.Designer.cs">
       <DependentUpon>FrmMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVehicles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVehicles.Designer.cs">
+      <DependentUpon>FrmVehicles.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalCfg.cs" />
     <Compile Include="Program.cs" />
@@ -128,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMap.resx">
       <DependentUpon>FrmMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVehicles.resx">
+      <DependentUpon>FrmVehicles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

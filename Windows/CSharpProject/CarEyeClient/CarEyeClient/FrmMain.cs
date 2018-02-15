@@ -25,6 +25,10 @@ namespace CarEyeClient
 		/// </summary>
 		private FrmDVR mFrmDVR;
 		/// <summary>
+		/// 车辆详情窗体
+		/// </summary>
+		private FrmVehicles mFrmVehicles;
+		/// <summary>
 		/// 当前登陆的终端以及其最新位置信息
 		/// </summary>
 		private JsonLastPosition mLastLocation;
@@ -55,10 +59,12 @@ namespace CarEyeClient
 		public void LoadUI()
 		{
 			// 载入地图与视频预览界面
-			mFrmMap = new FrmMap();
+			mFrmMap = new FrmMap(this);
 			mFrmMap.Show(this.dockMain);
-			mFrmDVR = new FrmDVR();
+			mFrmDVR = new FrmDVR(this);
 			mFrmDVR.Show(this.dockMain);
+			mFrmVehicles = new FrmVehicles(this);
+			mFrmVehicles.Show(this.dockMain, DockState.DockBottom);
 
 			// 默认显示地图页面
 			mFrmMap.Show();
@@ -80,6 +86,7 @@ namespace CarEyeClient
 			}
 
 			mLastLocation = dlg.LastLocation;
+			mFrmVehicles.AddVehicle(mLastLocation);
 			//mFrmMap.LocatedVehicle(mLastLocation);
 		}
 

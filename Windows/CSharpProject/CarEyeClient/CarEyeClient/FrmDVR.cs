@@ -14,9 +14,15 @@ namespace CarEyeClient
 	/// </summary>
 	public partial class FrmDVR : FrmChild
 	{
-		public FrmDVR()
+		/// <summary>
+		/// 主窗体
+		/// </summary>
+		private FrmMain mParent;
+
+		public FrmDVR(FrmMain aParent)
 		{
 			InitializeComponent();
+			mParent = aParent;
 		}
 	}
 }
