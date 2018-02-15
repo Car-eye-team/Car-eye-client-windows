@@ -80,7 +80,7 @@ namespace CarEyeClient
 			}
 
 			mLastLocation = dlg.LastLocation;
-			mFrmMap.LocatedVehicle(mLastLocation);
+			//mFrmMap.LocatedVehicle(mLastLocation);
 		}
 
 		/// <summary>

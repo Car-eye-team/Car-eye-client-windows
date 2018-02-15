@@ -41,6 +41,8 @@ namespace CarEyeClient
 		{
 			this.txtSvrIp.Text = Settings.Default.SvrIp;
 			this.nudPort.Value = Settings.Default.SvrPort;
+			// 测试用临时填入终端编号
+			this.txtName.Text = GlobalCfg.TerminalId;
 		}
 
 		/// <summary>
