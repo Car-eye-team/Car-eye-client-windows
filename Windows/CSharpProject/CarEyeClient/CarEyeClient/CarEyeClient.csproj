@@ -75,6 +75,12 @@
     <Compile Include="DlgLogin.Designer.cs">
       <DependentUpon>DlgLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="DlgTrackRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DlgTrackRequest.Designer.cs">
+      <DependentUpon>DlgTrackRequest.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     <Compile Include="Utils\UrlApiHelper.cs" />
     <EmbeddedResource Include="DlgLogin.resx">
       <DependentUpon>DlgLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DlgTrackRequest.resx">
+      <DependentUpon>DlgTrackRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBase.resx">
       <DependentUpon>FrmBase.cs</DependentUpon>

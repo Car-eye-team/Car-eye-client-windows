@@ -99,5 +99,16 @@ namespace CarEyeClient.Utils
 		{
 			LocatedVehicle(aMap, GetLocatedVehicleParams(aLocation));
 		}
+
+		/// <summary>
+		/// 载入历史轨迹定位信息
+		/// </summary>
+		/// <param name="aMap"></param>
+		/// <param name=""></param>
+		/// <param name="aParams"></param>
+		public static void LocatedHistory(this WebMap aMap, object[] aParams)
+		{
+			aMap.InvokeScript("LocatedHistory", aParams);
+		}
 	}
 }

@@ -30,15 +30,11 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.dgvVechiles = new System.Windows.Forms.DataGridView();
-			this.mnuRight = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.mnuRequest = new System.Windows.Forms.ToolStripMenuItem();
-			this.mnuTrack = new System.Windows.Forms.ToolStripMenuItem();
-			this.mnuDVR = new System.Windows.Forms.ToolStripMenuItem();
 			this.LicensePlate = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.TerminalId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.StatusDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +48,10 @@
 			this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.LocationTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.UpdateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.mnuRight = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.mnuTrack = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuDVR = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuRequest = new System.Windows.Forms.ToolStripMenuItem();
 			((System.ComponentModel.ISupportInitialize)(this.dgvVechiles)).BeginInit();
 			this.mnuRight.SuspendLayout();
 			this.SuspendLayout();
@@ -88,14 +88,14 @@
             this.LocationTime,
             this.UpdateTime});
 			this.dgvVechiles.ContextMenuStrip = this.mnuRight;
-			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle5.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-			dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvVechiles.DefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle19.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvVechiles.DefaultCellStyle = dataGridViewCellStyle19;
 			this.dgvVechiles.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dgvVechiles.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
 			this.dgvVechiles.Location = new System.Drawing.Point(0, 0);
@@ -110,34 +110,6 @@
 			this.dgvVechiles.Size = new System.Drawing.Size(899, 336);
 			this.dgvVechiles.TabIndex = 0;
 			this.dgvVechiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVechiles_CellDoubleClick);
-			// 
-			// mnuRight
-			// 
-			this.mnuRight.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuTrack,
-            this.mnuDVR,
-            this.mnuRequest});
-			this.mnuRight.Name = "mnuRight";
-			this.mnuRight.Size = new System.Drawing.Size(125, 70);
-			// 
-			// mnuRequest
-			// 
-			this.mnuRequest.Name = "mnuRequest";
-			this.mnuRequest.Size = new System.Drawing.Size(124, 22);
-			this.mnuRequest.Text = "点 名";
-			this.mnuRequest.Click += new System.EventHandler(this.mnuRequest_Click);
-			// 
-			// mnuTrack
-			// 
-			this.mnuTrack.Name = "mnuTrack";
-			this.mnuTrack.Size = new System.Drawing.Size(124, 22);
-			this.mnuTrack.Text = "轨迹回放";
-			// 
-			// mnuDVR
-			// 
-			this.mnuDVR.Name = "mnuDVR";
-			this.mnuDVR.Size = new System.Drawing.Size(124, 22);
-			this.mnuDVR.Text = "视频预览";
 			// 
 			// LicensePlate
 			// 
@@ -173,8 +145,8 @@
 			// Speed
 			// 
 			this.Speed.DataPropertyName = "Speed";
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			this.Speed.DefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			this.Speed.DefaultCellStyle = dataGridViewCellStyle13;
 			this.Speed.HeaderText = "速度(Km/h)";
 			this.Speed.Name = "Speed";
 			this.Speed.ReadOnly = true;
@@ -228,9 +200,9 @@
 			// LocationTime
 			// 
 			this.LocationTime.DataPropertyName = "LocationTime";
-			dataGridViewCellStyle3.Format = "G";
-			dataGridViewCellStyle3.NullValue = null;
-			this.LocationTime.DefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle17.Format = "G";
+			dataGridViewCellStyle17.NullValue = null;
+			this.LocationTime.DefaultCellStyle = dataGridViewCellStyle17;
 			this.LocationTime.HeaderText = "定位时间";
 			this.LocationTime.Name = "LocationTime";
 			this.LocationTime.ReadOnly = true;
@@ -239,13 +211,42 @@
 			// UpdateTime
 			// 
 			this.UpdateTime.DataPropertyName = "UpdateTime";
-			dataGridViewCellStyle4.Format = "G";
-			dataGridViewCellStyle4.NullValue = null;
-			this.UpdateTime.DefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle18.Format = "G";
+			dataGridViewCellStyle18.NullValue = null;
+			this.UpdateTime.DefaultCellStyle = dataGridViewCellStyle18;
 			this.UpdateTime.HeaderText = "信息更新时间";
 			this.UpdateTime.Name = "UpdateTime";
 			this.UpdateTime.ReadOnly = true;
 			this.UpdateTime.Width = 140;
+			// 
+			// mnuRight
+			// 
+			this.mnuRight.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuTrack,
+            this.mnuDVR,
+            this.mnuRequest});
+			this.mnuRight.Name = "mnuRight";
+			this.mnuRight.Size = new System.Drawing.Size(125, 70);
+			// 
+			// mnuTrack
+			// 
+			this.mnuTrack.Name = "mnuTrack";
+			this.mnuTrack.Size = new System.Drawing.Size(124, 22);
+			this.mnuTrack.Text = "轨迹回放";
+			this.mnuTrack.Click += new System.EventHandler(this.mnuTrack_Click);
+			// 
+			// mnuDVR
+			// 
+			this.mnuDVR.Name = "mnuDVR";
+			this.mnuDVR.Size = new System.Drawing.Size(124, 22);
+			this.mnuDVR.Text = "视频预览";
+			// 
+			// mnuRequest
+			// 
+			this.mnuRequest.Name = "mnuRequest";
+			this.mnuRequest.Size = new System.Drawing.Size(124, 22);
+			this.mnuRequest.Text = "点 名";
+			this.mnuRequest.Click += new System.EventHandler(this.mnuRequest_Click);
 			// 
 			// FrmVehicles
 			// 

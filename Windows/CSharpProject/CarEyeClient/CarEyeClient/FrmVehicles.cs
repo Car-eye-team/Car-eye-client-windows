@@ -126,5 +126,27 @@ namespace CarEyeClient
 				}
 			});
 		}
+
+		/// <summary>
+		/// 轨迹回放功能
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void mnuTrack_Click(object sender, EventArgs e)
+		{
+			var selVehicle = GetSelectedVehicle();
+			if (selVehicle == null)
+			{
+				return;
+			}
+
+			DlgTrackRequest tmpDlg = new DlgTrackRequest(selVehicle.TerminalId);
+			if (tmpDlg.ShowDialog() != DialogResult.OK)
+			{
+				return;
+			}
+
+			var history = tmpDlg.History;
+		}
 	}
 }

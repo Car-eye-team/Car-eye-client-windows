@@ -16,6 +16,63 @@ var INFO_WINDOW_OPTS = {
 	title: "车辆详情"			// 信息窗口标题
 }
 
+// 历史轨迹小车图标图层
+var CarMarker = null;
+var PrvAngle = -1;
+var PrvColor = -1;
+
+/*******************************************************************************
+** 函数名称: LocatedVehicle
+** 功能描述: 定位小车图标到地图中，直接定位，未经过加密计算
+** 参    数: None
+** 返 回 值: None
+** 作　  者: Main
+** 日  　期: 2018-02-15
+**------------------------------------------------------------------------------
+** 修 改 人:
+** 日　  期:
+**------------------------------------------------------------------------------
+********************************************************************************/
+function LocatedHistory(aPlate, aLng, aLat, aAngle, aColor) {
+	var tmp_pos = new BMap.Point(aLng, aLat);
+
+	if (CarMarker == null) {
+		CarMarker = new BMap.Marker(tmp_pos);
+		PrvAngle = -1;
+		MapPanel.addOverlay(CarMarker);
+		CarMarker.setLabel(GenLabel(aPlate));
+	}
+	else {
+		CarMarker.setPosition(tmp_pos);
+	}
+
+	// 设置显示图标及显示车牌号码
+	if (PrvAngle != aAngle
+		|| PrvColor != aColor) {
+		PrvAngle = aAngle;
+		PrvColor = aColor;
+		CarMarker.setIcon(GenVehicleIcon(aAngle, aColor));
+	}
+
+	MapPanel.setCenter(tmp_pos);
+}
+
+/*******************************************************************************
+** 函数名称: ClearGloble
+** 功能描述: 实现清除地图中所有的标志
+** 参    数: None
+** 返 回 值: None
+** 作　  者: Main
+** 日  　期: 2018-02-15
+**------------------------------------------------------------------------------
+** 修 改 人:
+** 日　  期:
+**------------------------------------------------------------------------------
+********************************************************************************/
+function ClearGloble() {
+	CarMarker = null;
+}
+
 /*******************************************************************************
 ** 函数名称: GenVehicleIcon
 ** 功能描述: 根据角度返回车辆图标

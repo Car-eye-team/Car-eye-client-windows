@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMap));
 			this.toolMap = new System.Windows.Forms.ToolStrip();
 			this.lblLocation = new System.Windows.Forms.ToolStripLabel();
@@ -39,7 +40,11 @@
 			this.txtSearch = new System.Windows.Forms.ToolStripTextBox();
 			this.btnSearch = new System.Windows.Forms.ToolStripButton();
 			this.btnClear = new System.Windows.Forms.ToolStripButton();
+			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+			this.btnPlay = new System.Windows.Forms.ToolStripButton();
+			this.btnStop = new System.Windows.Forms.ToolStripButton();
 			this.wbMap = new CarEyeMap.WebMap();
+			this.tmrPlay = new System.Windows.Forms.Timer(this.components);
 			this.toolMap.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -55,7 +60,10 @@
             this.toolStripSeparator1,
             this.txtSearch,
             this.btnSearch,
-            this.btnClear});
+            this.btnClear,
+            this.toolStripSeparator2,
+            this.btnPlay,
+            this.btnStop});
 			this.toolMap.Location = new System.Drawing.Point(0, 0);
 			this.toolMap.Name = "toolMap";
 			this.toolMap.Size = new System.Drawing.Size(799, 25);
@@ -139,6 +147,33 @@
 			this.btnClear.Text = "清 空";
 			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
 			// 
+			// toolStripSeparator2
+			// 
+			this.toolStripSeparator2.Name = "toolStripSeparator2";
+			this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+			// 
+			// btnPlay
+			// 
+			this.btnPlay.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this.btnPlay.Image = ((System.Drawing.Image)(resources.GetObject("btnPlay.Image")));
+			this.btnPlay.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.btnPlay.Name = "btnPlay";
+			this.btnPlay.Size = new System.Drawing.Size(40, 22);
+			this.btnPlay.Text = "播 放";
+			this.btnPlay.Visible = false;
+			this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
+			// 
+			// btnStop
+			// 
+			this.btnStop.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this.btnStop.Image = ((System.Drawing.Image)(resources.GetObject("btnStop.Image")));
+			this.btnStop.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.btnStop.Name = "btnStop";
+			this.btnStop.Size = new System.Drawing.Size(40, 22);
+			this.btnStop.Text = "停 止";
+			this.btnStop.Visible = false;
+			this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+			// 
 			// wbMap
 			// 
 			this.wbMap.ApiURLs = null;
@@ -152,6 +187,11 @@
 			this.wbMap.TabIndex = 1;
 			this.wbMap.CursorMoved += new CarEyeMap.CursorMoveEventHandler(this.wbMap_CursorMoved);
 			this.wbMap.LoadFinished += new System.EventHandler<CarEyeMap.LoadFinishedEventArgs>(this.wbMap_LoadFinished);
+			// 
+			// tmrPlay
+			// 
+			this.tmrPlay.Interval = 700;
+			this.tmrPlay.Tick += new System.EventHandler(this.tmrPlay_Tick);
 			// 
 			// FrmMap
 			// 
@@ -187,5 +227,9 @@
 		private System.Windows.Forms.ToolStripTextBox txtSearch;
 		private System.Windows.Forms.ToolStripButton btnSearch;
 		private System.Windows.Forms.ToolStripButton btnClear;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+		private System.Windows.Forms.ToolStripButton btnPlay;
+		private System.Windows.Forms.ToolStripButton btnStop;
+		private System.Windows.Forms.Timer tmrPlay;
 	}
 }

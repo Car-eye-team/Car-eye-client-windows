@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using CarEyeClient.Model;
 using CarEyeClient.Utils;
@@ -15,6 +17,18 @@ namespace CarEyeClient
 		/// 主窗体
 		/// </summary>
 		private FrmMain mParent;
+		/// <summary>
+		/// 轨迹数据
+		/// </summary>
+		private List<JsonHistoryItem> mHistory = new List<JsonHistoryItem>();
+		/// <summary>
+		/// 播放轨迹的车辆信息
+		/// </summary>
+		private JsonHistoryItem mHistoryVehicle;
+		/// <summary>
+		/// 播放索引
+		/// </summary>
+		private int mPlayIndex = 0;
 
 		public FrmMap(FrmMain aParent)
 		{
@@ -45,6 +59,30 @@ namespace CarEyeClient
 					map.SetCenter(aLocation.BdLongitude, aLocation.BdLatitude);
 				}
 			});
+		}
+
+		/// <summary>
+		/// 播放历史轨迹信息
+		/// </summary>
+		/// <param name="aHistory"></param>
+		public void PlayHistory(JsonHistoryPosition aHistory)
+		{
+			mHistory.Clear();
+			var sortLst = aHistory.Items.OrderBy(x => x.GpsTime);
+			mHistoryVehicle = sortLst.FirstOrDefault();
+			mHistory.AddRange(sortLst);
+			List<Coordinate> points = new List<Coordinate>(aHistory.Count);
+			foreach (var history in sortLst)
+			{
+				Coordinate tmpPoint = new Coordinate(history.BdLongitude, history.BdLatitude);
+				points.Add(tmpPoint);
+			}
+			this.wbMap.ShowRoute(points);
+			this.btnPlay.Visible = true;
+			this.btnStop.Visible = true;
+			this.btnPlay.Checked = true;
+			this.mPlayIndex = 0;
+			this.tmrPlay.Start();
 		}
 
 		/// <summary>
@@ -130,8 +168,7 @@ namespace CarEyeClient
 				// 空字符不进行搜索
 				return;
 			}
-
-//			this.wbMap.ClearSearchResult();
+			
 			// 先查看是否为坐标
 			Coordinate centerPoint = new Coordinate(searchStr);
 			if (!centerPoint.IsEmpty)
@@ -156,6 +193,78 @@ namespace CarEyeClient
 				this.btnSearch_Click(null, null);
 				return;
 			}
+		}
+
+		/// <summary>
+		/// 暂停或者播放
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void btnPlay_Click(object sender, EventArgs e)
+		{
+			if (this.btnPlay.Checked)
+			{
+				this.btnPlay.Checked = false;
+				this.tmrPlay.Stop();
+			}
+			else
+			{
+				this.btnPlay.Checked = true;
+				this.tmrPlay.Start();
+			}
+		}
+
+		/// <summary>
+		/// 停止播放
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void btnStop_Click(object sender, EventArgs e)
+		{
+			this.tmrPlay.Stop();
+			this.wbMap.Clear();
+			this.btnPlay.Visible = false;
+			this.btnStop.Visible = false;
+		}
+
+		/// <summary>
+		/// 在轨迹回放地图上创建小车图层
+		/// </summary>
+		/// <param name="aCourse">方向</param>
+		/// <param name="aX">MAPX中X坐标</param>
+		/// <param name="aY">MAPX中Y坐标</param>
+		/// <param name="aPlate">车牌号码</param>
+		private void UpdateCar(JsonHistoryItem aLocation, string aPlate)
+		{
+			// 根据情况创建不同方向的小车图层
+			this.wbMap.LocatedHistory(new object[] {aPlate,
+									aLocation.BdLongitude, aLocation.BdLatitude,
+									aLocation.Direction, MapHelper.NORMAL_COLOR });
+		}
+
+		/// <summary>
+		/// 轨迹播放定时器
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void tmrPlay_Tick(object sender, EventArgs e)
+		{
+			if (this.mPlayIndex < 0 || this.mHistory == null
+				|| this.mHistory.Count < 1 || this.mHistoryVehicle == null)
+			{
+				return;
+			}
+
+			if (this.mPlayIndex >= this.mHistory.Count)
+			{
+				// 播放完毕时的情况
+				this.btnPlay.Checked = false;
+				this.tmrPlay.Stop();
+				return;
+			}
+
+			JsonHistoryItem history = this.mHistory[mPlayIndex++];
+			UpdateCar(history, this.mHistoryVehicle.LicensePlate);
 		}
 	}
 }

@@ -20,5 +20,14 @@ namespace CarEyeClient
 		{
 			mFrmMap?.LocatedVehicle(aLocation, aIsCenter);
 		}
+
+		/// <summary>
+		/// 播放历史轨迹信息
+		/// </summary>
+		/// <param name="aHistory"></param>
+		public void PlayHistory(JsonHistoryPosition aHistory)
+		{
+			mFrmMap?.PlayHistory(aHistory);
+		}
 	}
 }
