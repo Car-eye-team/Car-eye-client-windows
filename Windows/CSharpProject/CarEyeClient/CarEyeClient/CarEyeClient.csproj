@@ -69,6 +69,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DlgDVRRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DlgDVRRequest.Designer.cs">
+      <DependentUpon>DlgDVRRequest.cs</DependentUpon>
+    </Compile>
     <Compile Include="DlgLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     <Compile Include="Utils\GuiHelper.cs" />
     <Compile Include="Utils\MapHelper.cs" />
     <Compile Include="Utils\UrlApiHelper.cs" />
+    <EmbeddedResource Include="DlgDVRRequest.resx">
+      <DependentUpon>DlgDVRRequest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DlgLogin.resx">
       <DependentUpon>DlgLogin.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
+using CarEyeClient.Model;
 
 namespace CarEyeClient.Utils
 {
@@ -30,7 +33,7 @@ namespace CarEyeClient.Utils
 		/// <param name="aAction">要执行的动作方法</param>
 		/// <returns></returns>
 		public static void InvokeIfRequired<T>(this T aControl, Action<T> aAction)
-			where T : System.Windows.Forms.Control
+			where T : Control
 		{
 			try
 			{
@@ -56,7 +59,7 @@ namespace CarEyeClient.Utils
 		/// <param name="aAction">要执行的动作方法</param>
 		/// <returns></returns>
 		public static void BeginInvokeIfRequired<T>(this T aControl, Action<T> aAction)
-			where T : System.Windows.Forms.Control
+			where T : Control
 		{
 			try
 			{
@@ -73,6 +76,78 @@ namespace CarEyeClient.Utils
 			{
 				throw ex;
 			}
+		}
+
+		/// <summary>
+		/// 将枚举集合加载到ComboBox列表中
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="aCtrl"></param>
+		/// <param name="aDefault"></param>
+		public static void LoadEnumLst<T>(ComboBox aCtrl, T aDefault) where T : IComparable
+		{
+			aCtrl.Items.Clear();
+			List<ValueString<T>> enumLst = ModelUtils.ToList<T>();
+			if (enumLst == null || enumLst.Count <= 0)
+			{
+				return;
+			}
+
+			foreach (ValueString<T> tmpItem in enumLst)
+			{
+				aCtrl.Items.Add(tmpItem);
+				if (aDefault.CompareTo(tmpItem.Value) == 0)
+				{
+					aCtrl.SelectedItem = tmpItem;
+				}
+			}
+
+			if (aCtrl.Items.Count > 0 && aCtrl.SelectedIndex < 0)
+			{
+				aCtrl.SelectedIndex = 0;
+			}
+			aCtrl.Refresh();
+		}
+
+		/// <summary>
+		/// 将枚举集合加载到ComboBox列表中
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="aCtrl"></param>
+		/// <param name="aSelect"></param>
+		/// <param name="aItems"></param>
+		public static void LoadEnumLst<T>(ComboBox aCtrl, T aSelect, params T[] aItems) where T : IComparable
+		{
+			if (aItems == null || aItems.Length <= 0)
+			{
+				LoadEnumLst<T>(aCtrl, aSelect);
+				return;
+			}
+
+			aCtrl.Items.Clear();
+			List<ValueString<T>> enumLst = ModelUtils.ToList<T>();
+			if (enumLst == null || enumLst.Count <= 0)
+			{
+				return;
+			}
+
+			foreach (ValueString<T> tmpItem in enumLst)
+			{
+				if (aItems.Contains(tmpItem.Value))
+				{
+					aCtrl.Items.Add(tmpItem);
+					if (aSelect.CompareTo(tmpItem.Value) == 0)
+					{
+						aCtrl.SelectedItem = tmpItem;
+					}
+				}
+			}
+
+			if (aCtrl.Items.Count > 0 && aCtrl.SelectedIndex < 0)
+			{
+				aCtrl.SelectedIndex = 0;
+			}
+			aCtrl.Refresh();
 		}
 	}
 }

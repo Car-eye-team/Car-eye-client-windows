@@ -226,22 +226,7 @@ namespace CarEyeClient
 			this.btnPlay.Visible = false;
 			this.btnStop.Visible = false;
 		}
-
-		/// <summary>
-		/// 在轨迹回放地图上创建小车图层
-		/// </summary>
-		/// <param name="aCourse">方向</param>
-		/// <param name="aX">MAPX中X坐标</param>
-		/// <param name="aY">MAPX中Y坐标</param>
-		/// <param name="aPlate">车牌号码</param>
-		private void UpdateCar(JsonHistoryItem aLocation, string aPlate)
-		{
-			// 根据情况创建不同方向的小车图层
-			this.wbMap.LocatedHistory(new object[] {aPlate,
-									aLocation.BdLongitude, aLocation.BdLatitude,
-									aLocation.Direction, MapHelper.NORMAL_COLOR });
-		}
-
+		
 		/// <summary>
 		/// 轨迹播放定时器
 		/// </summary>
@@ -264,7 +249,11 @@ namespace CarEyeClient
 			}
 
 			JsonHistoryItem history = this.mHistory[mPlayIndex++];
-			UpdateCar(history, this.mHistoryVehicle.LicensePlate);
+
+			// 根据情况创建不同方向的小车图层
+			this.wbMap.LocatedHistory(new object[] {this.mHistoryVehicle.LicensePlate,
+									history.BdLongitude, history.BdLatitude,
+									history.Direction, MapHelper.NORMAL_COLOR });
 		}
 	}
 }

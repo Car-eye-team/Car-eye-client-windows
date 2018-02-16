@@ -24,7 +24,11 @@ namespace CarEyeClient
 		/// </summary>
 		public JsonHistoryPosition History { get; private set; }
 
-		public DlgTrackRequest(string aTerminalId)
+		/// <summary>
+		/// 历史轨迹查询窗口
+		/// </summary>
+		/// <param name="aTerminalId">默认终端编号</param>
+		public DlgTrackRequest(string aTerminalId = null)
 		{
 			InitializeComponent();
 			this.txtTerminalId.Text = aTerminalId;

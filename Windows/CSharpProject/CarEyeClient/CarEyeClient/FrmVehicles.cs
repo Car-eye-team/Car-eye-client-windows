@@ -146,7 +146,29 @@ namespace CarEyeClient
 				return;
 			}
 
-			var history = tmpDlg.History;
+			mParent.PlayHistory(tmpDlg.History);
+		}
+
+		/// <summary>
+		/// 开启视频预览
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void mnuDVR_Click(object sender, EventArgs e)
+		{
+			var selVehicle = GetSelectedVehicle();
+			if (selVehicle == null)
+			{
+				return;
+			}
+
+			DlgDVRRequest tmpDlg = new DlgDVRRequest(selVehicle.TerminalId);
+			if (tmpDlg.ShowDialog() != DialogResult.OK)
+			{
+				return;
+			}
+
+			mParent.EnableDVR(tmpDlg.TerminalId, tmpDlg.Channel);
 		}
 	}
 }

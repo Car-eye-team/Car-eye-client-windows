@@ -29,5 +29,15 @@ namespace CarEyeClient
 		{
 			mFrmMap?.PlayHistory(aHistory);
 		}
+
+		/// <summary>
+		/// 使能对应终端通道的视频预览窗口
+		/// </summary>
+		/// <param name="aTerminalId"></param>
+		/// <param name="aChn"></param>
+		public void EnableDVR(string aTerminalId, AVChannel aChn)
+		{
+
+		}
 	}
 }

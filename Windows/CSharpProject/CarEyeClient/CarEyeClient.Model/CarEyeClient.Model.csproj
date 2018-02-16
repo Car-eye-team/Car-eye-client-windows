@@ -50,6 +50,7 @@
     <Compile Include="JsonLastPosition.cs" />
     <Compile Include="ModelUtils.cs" />
     <Compile Include="TerminalType.cs" />
+    <Compile Include="ValueString.cs" />
     <Compile Include="VedioControlType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VehicleStatusType.cs" />
