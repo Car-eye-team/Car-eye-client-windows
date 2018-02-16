@@ -87,6 +87,14 @@
     <Compile Include="DlgTrackRequest.Designer.cs">
       <DependentUpon>DlgTrackRequest.cs</DependentUpon>
     </Compile>
+    <Compile Include="DVR\DVRToken.cs" />
+    <Compile Include="DVR\RTSPViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DVR\RTSPViewer.Designer.cs">
+      <DependentUpon>RTSPViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DVR\SplitScreenType.cs" />
     <Compile Include="FrmBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +149,9 @@
     <EmbeddedResource Include="DlgTrackRequest.resx">
       <DependentUpon>DlgTrackRequest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DVR\RTSPViewer.resx">
+      <DependentUpon>RTSPViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBase.resx">
       <DependentUpon>FrmBase.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +195,12 @@
   <ItemGroup>
     <Content Include="logo.ico" />
     <Content Include="MapPage\BdMain.js" />
+    <None Include="Resources\16.png" />
+    <None Include="Resources\9.png" />
+    <None Include="Resources\8.png" />
+    <None Include="Resources\6.png" />
+    <None Include="Resources\4.png" />
+    <None Include="Resources\1.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

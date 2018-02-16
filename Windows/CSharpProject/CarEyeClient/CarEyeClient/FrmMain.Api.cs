@@ -37,7 +37,11 @@ namespace CarEyeClient
 		/// <param name="aChn"></param>
 		public void EnableDVR(string aTerminalId, AVChannel aChn)
 		{
-
+			mFrmDVR.AddVideoToken(new DVR.DVRToken()
+			{
+				TerminalId = aTerminalId,
+				LogicChn = aChn,
+			});
 		}
 	}
 }

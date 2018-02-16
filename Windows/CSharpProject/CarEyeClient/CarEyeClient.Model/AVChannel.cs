@@ -10,7 +10,7 @@ namespace CarEyeClient.Model
 		/// <summary>
 		/// 音视频/视频,驾驶员区域
 		/// </summary>
-		[Description(@"驾驶员音视频/视频")]
+		[Description(@"驾驶员")]
 		Chn1 = 1,
 		/// <summary>
 		/// 音视频/视频,车辆正前方
@@ -25,12 +25,12 @@ namespace CarEyeClient.Model
 		/// <summary>
 		/// 音视频/视频,车厢前部
 		/// </summary>
-		[Description(@"车厢前部音视频/视频")]
+		[Description(@"车厢前部")]
 		Chn4,
 		/// <summary>
 		/// 音视频/视频,车厢后部
 		/// </summary>
-		[Description(@"车厢后部音视频/视频")]
+		[Description(@"车厢后部")]
 		Chn5,
 		/// <summary>
 		/// 音视频/视频,车后门
@@ -60,7 +60,7 @@ namespace CarEyeClient.Model
 		/// <summary>
 		/// 音视频/视频,车厢中部
 		/// </summary>
-		[Description(@"车厢中部音视频/视频")]
+		[Description(@"车厢中部")]
 		Chn11,
 		/// <summary>
 		/// 音视频/视频,车中门

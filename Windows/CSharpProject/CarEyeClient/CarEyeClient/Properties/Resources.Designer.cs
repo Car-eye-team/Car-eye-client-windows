@@ -61,7 +61,70 @@ namespace CarEyeClient.Properties {
         }
         
         /// <summary>
-        ///   查找类似 // 默认的LABEL显示样式 蓝底白字
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _1 {
+            get {
+                object obj = ResourceManager.GetObject("1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _16 {
+            get {
+                object obj = ResourceManager.GetObject("16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _4 {
+            get {
+                object obj = ResourceManager.GetObject("4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _6 {
+            get {
+                object obj = ResourceManager.GetObject("6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _8 {
+            get {
+                object obj = ResourceManager.GetObject("8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _9 {
+            get {
+                object obj = ResourceManager.GetObject("9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 // 车辆图层Hashtable
+        ///var VehicleMarkers = new Hashtable();
+        ///
+        ///// 默认的LABEL显示样式 蓝底白字
         ///var LABEL_STYLE = {
         ///	borderColor: &quot;#045493&quot;,
         ///	backgroundColor: &quot;#4a6cfc&quot;,
@@ -76,14 +139,13 @@ namespace CarEyeClient.Properties {
         ///	title: &quot;车辆详情&quot;			// 信息窗口标题
         ///}
         ///
+        ///// 历史轨迹小车图标图层
+        ///var CarMarker = null;
+        ///var PrvAngle = -1;
+        ///var PrvColor = -1;
+        ///
         ////*******************************************************************************
-        ///** 函数名称: GenVehicleIcon
-        ///** 功能描述: 根据角度返回车辆图标
-        ///** 参    数: None
-        ///** 返 回 值: None
-        ///** 作　  者: Main
-        ///** 日  　期: 2018-02-14
-        ///**---------------------------------- [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        ///** 函数名称: Locat [字符串的其余部分被截断]&quot;; 的本地化字符串。
         /// </summary>
         internal static string BdMain {
             get {
