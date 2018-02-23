@@ -63,5 +63,9 @@ namespace CarEyeClient
 		/// 目前测试使用的终端编号
 		/// </summary>
 		public static string TerminalId { get; set; } = "18668171282";
+		/// <summary>
+		/// 视频播放连接地址
+		/// </summary>
+		public const string RTSPUrl = "rtsp://120.76.235.109:10554/{0}?channel={1}.sdp";
 	}
 }

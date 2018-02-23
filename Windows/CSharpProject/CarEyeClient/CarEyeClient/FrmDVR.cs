@@ -63,6 +63,7 @@ namespace CarEyeClient
 		{
 			this.Show();
 			this.Activate();
+			aToken.Url = string.Format(GlobalCfg.RTSPUrl, aToken.TerminalId, (byte)aToken.LogicChn);
 			this.AddRTSP(aToken);
 		}
 
@@ -477,6 +478,33 @@ namespace CarEyeClient
 					}
 				}
 			}));
+		}
+
+		/// <summary>
+		/// 播放指定通道音频
+		/// </summary>
+		/// <param name="aChannelId"></param>
+		public void PlayChnSound(int aChannelId)
+		{
+			if (aChannelId <= 0)
+			{
+				return;
+			}
+
+			PlayerMethods.EasyPlayer_PlaySound(aChannelId);
+
+			foreach (var tmpItem in mViewers)
+			{
+				if (tmpItem.ChannelId == aChannelId)
+				{
+					tmpItem.SetSoundStatus(true);
+					UpdateInfo("播放{0}的音频信号...", tmpItem.Token);
+				}
+				else
+				{
+					tmpItem.SetSoundStatus();
+				}
+			}
 		}
 	}
 }

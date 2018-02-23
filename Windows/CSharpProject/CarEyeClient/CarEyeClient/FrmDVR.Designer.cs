@@ -127,6 +127,7 @@
 			// 
 			// lblInfo
 			// 
+			this.lblInfo.ForeColor = System.Drawing.Color.WhiteSmoke;
 			this.lblInfo.Name = "lblInfo";
 			this.lblInfo.Size = new System.Drawing.Size(12, 22);
 			this.lblInfo.Text = " ";

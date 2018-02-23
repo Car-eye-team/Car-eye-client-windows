@@ -8,6 +8,10 @@ namespace CarEyeClient.DVR
 	internal class DVRToken
 	{
 		/// <summary>
+		/// 监控的车辆车牌号码
+		/// </summary>
+		public string Plate { get; set; }
+		/// <summary>
 		/// 终端编号
 		/// </summary>
 		public string TerminalId { get; set; }

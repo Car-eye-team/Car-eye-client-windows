@@ -33,9 +33,10 @@
 			this.lblView = new System.Windows.Forms.Label();
 			this.toolStrip = new System.Windows.Forms.ToolStrip();
 			this.btnPlay = new System.Windows.Forms.ToolStripButton();
-			this.btnRefresh = new System.Windows.Forms.ToolStripButton();
 			this.btnScreenShot = new System.Windows.Forms.ToolStripButton();
 			this.lblInfo = new System.Windows.Forms.ToolStripLabel();
+			this.btnRecord = new System.Windows.Forms.ToolStripButton();
+			this.btnSound = new System.Windows.Forms.ToolStripButton();
 			this.pnlBase.SuspendLayout();
 			this.toolStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -73,9 +74,10 @@
 			this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
 			this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnPlay,
-            this.btnRefresh,
             this.btnScreenShot,
-            this.lblInfo});
+            this.lblInfo,
+            this.btnRecord,
+            this.btnSound});
 			this.toolStrip.Location = new System.Drawing.Point(0, 0);
 			this.toolStrip.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
 			this.toolStrip.Name = "toolStrip";
@@ -93,17 +95,6 @@
 			this.btnPlay.Size = new System.Drawing.Size(40, 22);
 			this.btnPlay.Text = "播 放";
 			this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
-			// 
-			// btnRefresh
-			// 
-			this.btnRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-			this.btnRefresh.Enabled = false;
-			this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
-			this.btnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.btnRefresh.Name = "btnRefresh";
-			this.btnRefresh.Size = new System.Drawing.Size(40, 22);
-			this.btnRefresh.Text = "刷 新";
-			this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
 			// 
 			// btnScreenShot
 			// 
@@ -123,6 +114,28 @@
 			this.lblInfo.Name = "lblInfo";
 			this.lblInfo.Size = new System.Drawing.Size(126, 22);
 			this.lblInfo.Text = "13824512354-驾驶员";
+			// 
+			// btnRecord
+			// 
+			this.btnRecord.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this.btnRecord.Enabled = false;
+			this.btnRecord.Image = ((System.Drawing.Image)(resources.GetObject("btnRecord.Image")));
+			this.btnRecord.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.btnRecord.Name = "btnRecord";
+			this.btnRecord.Size = new System.Drawing.Size(40, 22);
+			this.btnRecord.Text = "录 像";
+			this.btnRecord.Click += new System.EventHandler(this.btnRecord_Click);
+			// 
+			// btnSound
+			// 
+			this.btnSound.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this.btnSound.Enabled = false;
+			this.btnSound.Image = ((System.Drawing.Image)(resources.GetObject("btnSound.Image")));
+			this.btnSound.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.btnSound.Name = "btnSound";
+			this.btnSound.Size = new System.Drawing.Size(40, 22);
+			this.btnSound.Text = "声 音";
+			this.btnSound.Click += new System.EventHandler(this.btnSound_Click);
 			// 
 			// RTSPViewer
 			// 
@@ -145,9 +158,10 @@
 		private System.Windows.Forms.Panel pnlBase;
 		private System.Windows.Forms.ToolStrip toolStrip;
 		private System.Windows.Forms.ToolStripButton btnPlay;
-		private System.Windows.Forms.ToolStripButton btnRefresh;
+		private System.Windows.Forms.ToolStripButton btnRecord;
 		private System.Windows.Forms.ToolStripButton btnScreenShot;
 		private System.Windows.Forms.ToolStripLabel lblInfo;
 		private System.Windows.Forms.Label lblView;
+		private System.Windows.Forms.ToolStripButton btnSound;
 	}
 }
