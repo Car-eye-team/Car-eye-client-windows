@@ -74,6 +74,7 @@ namespace CarEyeClient
 		/// <param name="e"></param>
 		private void FrmDVR_Load(object sender, EventArgs e)
 		{
+			PlayerMethods.EasyPlayer_Init();
 			for (int i = 0; i < MaxViewerCount; i++)
 			{
 				RTSPViewer tmpViewer = new RTSPViewer(this);
@@ -477,6 +478,8 @@ namespace CarEyeClient
 						tmpViewer.StopPlay();
 					}
 				}
+				// 释放资源
+				PlayerMethods.EasyPlayer_Release();
 			}));
 		}
 
