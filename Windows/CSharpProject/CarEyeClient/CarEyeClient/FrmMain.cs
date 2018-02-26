@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using System.Diagnostics;
-using CarEyeClient.Utils;
 using CarEyeClient.Model;
-using WeifenLuo.WinFormsUI.Docking;
-using CarEyeMap;
 using CarEyeClient.Properties;
+using CarEyeClient.Utils;
+using WeifenLuo.WinFormsUI.Docking;
 
 namespace CarEyeClient
 {

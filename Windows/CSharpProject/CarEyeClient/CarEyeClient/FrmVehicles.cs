@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CarEyeClient.Model;
+using CarEyeClient.Properties;
 using CarEyeClient.Utils;
 
 namespace CarEyeClient
@@ -20,6 +22,10 @@ namespace CarEyeClient
 		/// 主窗体
 		/// </summary>
 		private FrmMain mParent;
+		/// <summary>
+		/// 上次上报时间
+		/// </summary>
+		private DateTime mPrvReportTime;
 
 		public FrmVehicles(FrmMain aParent)
 		{
@@ -27,6 +33,21 @@ namespace CarEyeClient
 			// 禁止自动生成属性列
 			this.dgvVechiles.AutoGenerateColumns = false;
 			mParent = aParent;
+		}
+
+		/// <summary>
+		/// 窗体载入过程
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void FrmVehicles_Load(object sender, EventArgs e)
+		{
+			if (!bgkReport.IsBusy)
+			{
+				// 开启自动点名线程
+				mPrvReportTime = DateTime.Now;
+				bgkReport.RunWorkerAsync();
+			}
 		}
 
 		/// <summary>
@@ -53,9 +74,10 @@ namespace CarEyeClient
 			else
 			{
 				vehicles[tmpIndex] = aVehicle;
+				this.dgvVechiles.Refresh();
+				return;
 			}
-
-
+			
 			this.dgvVechiles.DataSource = null;
 			this.dgvVechiles.DataSource = vehicles;
 			this.dgvVechiles.Refresh();
@@ -169,6 +191,59 @@ namespace CarEyeClient
 			}
 
 			mParent.EnableDVR(tmpDlg.TerminalId, tmpDlg.Channel);
+		}
+
+		/// <summary>
+		/// 自动点名工作线程
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void bgkReport_DoWork(object sender, DoWorkEventArgs e)
+		{
+			while (!bgkReport.CancellationPending)
+			{
+				Thread.Sleep(500);
+				Application.DoEvents();
+				DateTime now = DateTime.Now;
+				if ((now - mPrvReportTime).TotalSeconds < Settings.Default.AutoReportInterval)
+				{
+					continue;
+				}
+
+				mPrvReportTime = now;
+				var vehicles = (this.dgvVechiles.DataSource as List<JsonLastPosition>).ToArray();
+				if (vehicles == null || vehicles.Length < 1)
+				{
+					continue;
+				}
+
+				foreach (var vehicle in vehicles)
+				{
+					if (bgkReport.CancellationPending)
+					{
+						// 系统取消退出
+						return;
+					}
+					var lastLocation = UrlApiHelper.GetLastLocation(vehicle.TerminalId);
+					if (lastLocation != null && lastLocation.Status == 0)
+					{
+						this.dgvVechiles.Invoke(new Action<JsonLastPosition>(AddVehicle), lastLocation);
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// 关闭窗体时取消后台任务
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void FrmVehicles_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			if (bgkReport.IsBusy)
+			{
+				bgkReport.CancelAsync();
+			}
 		}
 	}
 }

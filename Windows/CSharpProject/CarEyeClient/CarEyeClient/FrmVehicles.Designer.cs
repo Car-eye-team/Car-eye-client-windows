@@ -52,6 +52,7 @@
 			this.mnuTrack = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuDVR = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuRequest = new System.Windows.Forms.ToolStripMenuItem();
+			this.bgkReport = new System.ComponentModel.BackgroundWorker();
 			((System.ComponentModel.ISupportInitialize)(this.dgvVechiles)).BeginInit();
 			this.mnuRight.SuspendLayout();
 			this.SuspendLayout();
@@ -226,28 +227,33 @@
             this.mnuDVR,
             this.mnuRequest});
 			this.mnuRight.Name = "mnuRight";
-			this.mnuRight.Size = new System.Drawing.Size(153, 92);
+			this.mnuRight.Size = new System.Drawing.Size(125, 70);
 			// 
 			// mnuTrack
 			// 
 			this.mnuTrack.Name = "mnuTrack";
-			this.mnuTrack.Size = new System.Drawing.Size(152, 22);
+			this.mnuTrack.Size = new System.Drawing.Size(124, 22);
 			this.mnuTrack.Text = "轨迹回放";
 			this.mnuTrack.Click += new System.EventHandler(this.mnuTrack_Click);
 			// 
 			// mnuDVR
 			// 
 			this.mnuDVR.Name = "mnuDVR";
-			this.mnuDVR.Size = new System.Drawing.Size(152, 22);
+			this.mnuDVR.Size = new System.Drawing.Size(124, 22);
 			this.mnuDVR.Text = "视频预览";
 			this.mnuDVR.Click += new System.EventHandler(this.mnuDVR_Click);
 			// 
 			// mnuRequest
 			// 
 			this.mnuRequest.Name = "mnuRequest";
-			this.mnuRequest.Size = new System.Drawing.Size(152, 22);
+			this.mnuRequest.Size = new System.Drawing.Size(124, 22);
 			this.mnuRequest.Text = "点 名";
 			this.mnuRequest.Click += new System.EventHandler(this.mnuRequest_Click);
+			// 
+			// bgkReport
+			// 
+			this.bgkReport.WorkerSupportsCancellation = true;
+			this.bgkReport.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgkReport_DoWork);
 			// 
 			// FrmVehicles
 			// 
@@ -263,6 +269,8 @@
 			this.ShowHint = WeifenLuo.WinFormsUI.Docking.DockState.DockBottom;
 			this.TabText = "车辆详情";
 			this.Text = "车辆详情";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmVehicles_FormClosing);
+			this.Load += new System.EventHandler(this.FrmVehicles_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dgvVechiles)).EndInit();
 			this.mnuRight.ResumeLayout(false);
 			this.ResumeLayout(false);
@@ -289,5 +297,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Address;
 		private System.Windows.Forms.DataGridViewTextBoxColumn LocationTime;
 		private System.Windows.Forms.DataGridViewTextBoxColumn UpdateTime;
+		private System.ComponentModel.BackgroundWorker bgkReport;
 	}
 }
