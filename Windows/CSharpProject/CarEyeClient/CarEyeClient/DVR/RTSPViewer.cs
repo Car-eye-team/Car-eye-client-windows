@@ -205,6 +205,7 @@ namespace CarEyeClient.DVR
 			PlayerMethods.EasyPlayer_SetManuPicShotPath(ChannelId, mImagePath);
 
 			this.btnPlay.Checked = true;
+			this.btnPlay.Enabled = true;
 			UpdateDisplayStatus(true);
 			return true;
 		}
