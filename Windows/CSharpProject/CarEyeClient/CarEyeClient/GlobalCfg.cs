@@ -1,4 +1,6 @@
 ﻿using System.Reflection;
+using CarEyeClient.Model;
+using CarEyeClient.Properties;
 
 namespace CarEyeClient
 {
@@ -63,9 +65,19 @@ namespace CarEyeClient
 		/// 目前测试使用的终端编号
 		/// </summary>
 		public static string TerminalId { get; set; } = "18668171282";
+		
 		/// <summary>
-		/// 视频播放连接地址
+		/// 生成对应的视频播放地址
 		/// </summary>
-		public const string RTSPUrl = "rtsp://120.76.235.109:10554/{0}?channel={1}.sdp";
+		/// <param name="aTerminalId">终端编号</param>
+		/// <param name="aChn">通道号</param>
+		/// <returns></returns>
+		public static string GenRTSPUrl(string aTerminalId, AVChannel aChn)
+		{
+			return string.Format("rtsp://{0}:{1}/{2}?channel={3}.sdp",
+								Settings.Default.DVRSvrIp,
+								Settings.Default.DVRSvrPort,
+								aTerminalId, (byte)aChn);
+		}
 	}
 }

@@ -73,6 +73,7 @@
 			this.mnuSysSet.Name = "mnuSysSet";
 			this.mnuSysSet.Size = new System.Drawing.Size(152, 22);
 			this.mnuSysSet.Text = "系统设置";
+			this.mnuSysSet.Click += new System.EventHandler(this.mnuSysSet_Click);
 			// 
 			// FrmMain
 			// 

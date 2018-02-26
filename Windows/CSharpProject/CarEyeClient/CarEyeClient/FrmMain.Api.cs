@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using CarEyeClient.Model;
+﻿using CarEyeClient.Model;
+using CarEyeClient.Utils;
 
 namespace CarEyeClient
 {
@@ -18,7 +15,11 @@ namespace CarEyeClient
 		/// <param name="aIsCenter"></param>
 		public void LocatedVehicle(JsonLastPosition aLocation, bool aIsCenter = true)
 		{
-			mFrmMap?.LocatedVehicle(aLocation, aIsCenter);
+			mFrmMap?.InvokeIfRequired((frm) =>
+			{
+				frm.LocatedVehicle(aLocation, aIsCenter);
+				frm.Show();
+			});
 		}
 
 		/// <summary>
@@ -27,7 +28,7 @@ namespace CarEyeClient
 		/// <param name="aHistory"></param>
 		public void PlayHistory(JsonHistoryPosition aHistory)
 		{
-			mFrmMap?.PlayHistory(aHistory);
+			mFrmMap?.InvokeIfRequired((frm) => frm.PlayHistory(aHistory));
 		}
 
 		/// <summary>
@@ -37,11 +38,11 @@ namespace CarEyeClient
 		/// <param name="aChn"></param>
 		public void EnableDVR(string aTerminalId, AVChannel aChn)
 		{
-			mFrmDVR.AddVideoToken(new DVR.DVRToken()
+			mFrmDVR?.InvokeIfRequired((frm) => frm.AddVideoToken(new DVR.DVRToken()
 			{
 				TerminalId = aTerminalId,
 				LogicChn = aChn,
-			});
+			}));
 		}
 	}
 }

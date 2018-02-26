@@ -108,5 +108,15 @@ namespace CarEyeClient
 				Settings.Default.Save();
 			}
 		}
+
+		/// <summary>
+		/// 系统设置
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void mnuSysSet_Click(object sender, EventArgs e)
+		{
+			new DlgSettings().ShowDialog();
+		}
 	}
 }

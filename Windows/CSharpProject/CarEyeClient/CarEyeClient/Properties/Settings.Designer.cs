@@ -12,7 +12,7 @@ namespace CarEyeClient.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.3.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.5.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -52,6 +52,54 @@ namespace CarEyeClient.Properties {
             }
             set {
                 this["SvrPort"] = value;
+            }
+        }
+        
+        /// <summary>
+        /// 视频服务器IP地址
+        /// </summary>
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsDescriptionAttribute("视频服务器IP地址")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("120.76.235.109")]
+        public string DVRSvrIp {
+            get {
+                return ((string)(this["DVRSvrIp"]));
+            }
+            set {
+                this["DVRSvrIp"] = value;
+            }
+        }
+        
+        /// <summary>
+        /// 视频服务器端口号
+        /// </summary>
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsDescriptionAttribute("视频服务器端口号")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10554")]
+        public ushort DVRSvrPort {
+            get {
+                return ((ushort)(this["DVRSvrPort"]));
+            }
+            set {
+                this["DVRSvrPort"] = value;
+            }
+        }
+        
+        /// <summary>
+        /// 自动上报时间间隔(s)
+        /// </summary>
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsDescriptionAttribute("自动上报时间间隔(s)")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("30")]
+        public int AutoReportInterval {
+            get {
+                return ((int)(this["AutoReportInterval"]));
+            }
+            set {
+                this["AutoReportInterval"] = value;
             }
         }
     }

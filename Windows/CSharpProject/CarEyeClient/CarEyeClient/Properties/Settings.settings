@@ -8,5 +8,14 @@
     <Setting Name="SvrPort" Description="当前连接服务器的端口号" Type="System.UInt16" Scope="User">
       <Value Profile="(Default)">801</Value>
     </Setting>
+    <Setting Name="DVRSvrIp" Description="视频服务器IP地址" Type="System.String" Scope="User">
+      <Value Profile="(Default)">120.76.235.109</Value>
+    </Setting>
+    <Setting Name="DVRSvrPort" Description="视频服务器端口号" Type="System.UInt16" Scope="User">
+      <Value Profile="(Default)">10554</Value>
+    </Setting>
+    <Setting Name="AutoReportInterval" Description="自动上报时间间隔(s)" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">30</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

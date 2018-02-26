@@ -63,7 +63,7 @@ namespace CarEyeClient
 		{
 			this.Show();
 			this.Activate();
-			aToken.Url = string.Format(GlobalCfg.RTSPUrl, aToken.TerminalId, (byte)aToken.LogicChn);
+			aToken.Url = GlobalCfg.GenRTSPUrl(aToken.TerminalId, aToken.LogicChn);
 			this.AddRTSP(aToken);
 		}
 

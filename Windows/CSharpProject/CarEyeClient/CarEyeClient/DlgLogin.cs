@@ -119,7 +119,7 @@ namespace CarEyeClient
 			Settings.Default.SvrIp = this.txtSvrIp.Text.Trim();
 			if (string.IsNullOrEmpty(Settings.Default.SvrIp))
 			{
-				SetError(txtSvrIp, "用户密码不能为空.");
+				SetError(txtSvrIp, "服务器IP地址不能为空.");
 				return;
 			}
 			Settings.Default.SvrPort = (ushort)this.nudPort.Value;

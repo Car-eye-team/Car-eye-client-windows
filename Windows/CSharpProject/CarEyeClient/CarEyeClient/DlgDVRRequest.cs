@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CarEyeClient.Model;
+using CarEyeClient.Properties;
 using CarEyeClient.Utils;
 
 namespace CarEyeClient
@@ -28,6 +29,8 @@ namespace CarEyeClient
 		{
 			InitializeComponent();
 			this.txtTerminalId.Text = aTerminalId;
+			this.txtSvrIp.Text = Settings.Default.DVRSvrIp;
+			this.nudPort.Value = Settings.Default.DVRSvrPort;
 		}
 
 		/// <summary>
@@ -65,6 +68,15 @@ namespace CarEyeClient
 				return;
 			}
 
+			string svrIp = this.txtSvrIp.Text.Trim();
+			if (string.IsNullOrEmpty(svrIp))
+			{
+				errPrv.SetError(this.txtSvrIp, "视频服务器IP地址不能为空...");
+				this.txtSvrIp.Focus();
+				return;
+			}
+			ushort svrPort = (ushort)this.nudPort.Value;
+
 			this.btnOk.Enabled = false;
 			this.TerminalId = null;
 			var task = Task.Factory.StartNew(() =>
@@ -82,6 +94,8 @@ namespace CarEyeClient
 				{
 					this.TerminalId = terminalId;
 					this.Channel = selChn.Value;
+					Settings.Default.DVRSvrIp = svrIp;
+					Settings.Default.DVRSvrPort = svrPort;
 				}
 			});
 			task.Wait();
