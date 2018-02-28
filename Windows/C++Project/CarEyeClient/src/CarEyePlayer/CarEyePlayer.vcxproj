@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4890B410-FE84-4408-8D42-4B79BCA92552}</ProjectGuid>
+    <RootNamespace>CarEyePlayer</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <ProjectName>CarEyePlayer</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\..\..\Bin\C++\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\..\Bin\C++\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\CarEyeSkinUI</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OutputFile>..\..\..\Bin\C++\$(TargetName)$(TargetExt)</OutputFile>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\CarEyeSkinUI</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <OutputFile>..\..\..\Bin\C++\$(TargetName)$(TargetExt)</OutputFile>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="icon1.ico" />
+    <None Include="icon2.ico" />
+    <None Include="ReadMe.txt" />
+    <None Include="res\CarEyePlayer.ico" />
+    <None Include="res\CarEyePlayer.rc2" />
+    <None Include="res\CarEyePlayer11.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CreateDump.h" />
+    <ClInclude Include="DlgRender.h" />
+    <ClInclude Include="DlgVideo.h" />
+    <ClInclude Include="CarEyePlayer.h" />
+    <ClInclude Include="CarEyePlayerDlg.h" />
+    <ClInclude Include="CarEyeSkinUI\BuildDialog.h" />
+    <ClInclude Include="CarEyeSkinUI\detours.h" />
+    <ClInclude Include="CarEyeSkinUI\FlashControl.h" />
+    <ClInclude Include="CarEyeSkinUI\Function.h" />
+    <ClInclude Include="CarEyeSkinUI\GifImage.h" />
+    <ClInclude Include="CarEyeSkinUI\ImageEx.h" />
+    <ClInclude Include="CarEyeSkinUI\internal.h" />
+    <ClInclude Include="CarEyeSkinUI\ISkinControl.h" />
+    <ClInclude Include="CarEyeSkinUI\Macro.h" />
+    <ClInclude Include="CarEyeSkinUI\MemoryDC.h" />
+    <ClInclude Include="CarEyeSkinUI\RenderManager.h" />
+    <ClInclude Include="CarEyeSkinUI\resource.h" />
+    <ClInclude Include="CarEyeSkinUI\SkinButton.h" />
+    <ClInclude Include="CarEyeSkinUI\SkinComboBox.h" />
+    <ClInclude Include="CarEyeSkinUI\SkinDialog.h" />
+    <ClInclude Include="CarEyeSkinUI\SkinEdit.h" />
+    <ClInclude Include="CarEyeSkinUI\SkinListBox.h" />
+    <ClInclude Include="CarEyeSkinUI\SkinListCtrl.h" />
+    <ClInclude Include="CarEyeSkinUI\SkinProgressCtrl.h" />
+    <ClInclude Include="CarEyeSkinUI\SkinRichEdit.h" />
+    <ClInclude Include="CarEyeSkinUI\SkinSliderCtrl.h" />
+    <ClInclude Include="CarEyeSkinUI\SkinStatic.h" />
+    <ClInclude Include="CarEyeSkinUI\SkinTabCtrl.h" />
+    <ClInclude Include="CarEyeSkinUI\SkinToolBar.h" />
+    <ClInclude Include="CarEyeSkinUI\SkinTreeCtrl.h" />
+    <ClInclude Include="CarEyeSkinUI\SkinUI.h" />
+    <ClInclude Include="CarEyeSkinUI\SkinUIMenu.h" />
+    <ClInclude Include="CarEyeSkinUI\SkinUI_ScrollBar.h" />
+    <ClInclude Include="CarEyeSkinUI\XmlManager.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CreateDump.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="DlgRender.cpp" />
+    <ClCompile Include="DlgVideo.cpp" />
+    <ClCompile Include="CarEyePlayer.cpp" />
+    <ClCompile Include="CarEyePlayerDlg.cpp" />
+    <ClCompile Include="CarEyeSkinUI\BuildDialog.cpp" />
+    <ClCompile Include="CarEyeSkinUI\FlashControl.cpp" />
+    <ClCompile Include="CarEyeSkinUI\Function.cpp" />
+    <ClCompile Include="CarEyeSkinUI\GifImage.cpp" />
+    <ClCompile Include="CarEyeSkinUI\ImageEx.cpp" />
+    <ClCompile Include="CarEyeSkinUI\ISkinControl.cpp" />
+    <ClCompile Include="CarEyeSkinUI\MemoryDC.cpp" />
+    <ClCompile Include="CarEyeSkinUI\RenderManager.cpp" />
+    <ClCompile Include="CarEyeSkinUI\SkinButton.cpp" />
+    <ClCompile Include="CarEyeSkinUI\SkinComboBox.cpp" />
+    <ClCompile Include="CarEyeSkinUI\SkinDialog.cpp" />
+    <ClCompile Include="CarEyeSkinUI\SkinEdit.cpp" />
+    <ClCompile Include="CarEyeSkinUI\SkinListBox.cpp" />
+    <ClCompile Include="CarEyeSkinUI\SkinListCtrl.cpp" />
+    <ClCompile Include="CarEyeSkinUI\SkinProgressCtrl.cpp" />
+    <ClCompile Include="CarEyeSkinUI\SkinRichEdit.cpp" />
+    <ClCompile Include="CarEyeSkinUI\SkinSliderCtrl.cpp" />
+    <ClCompile Include="CarEyeSkinUI\SkinStatic.cpp" />
+    <ClCompile Include="CarEyeSkinUI\SkinTabCtrl.cpp" />
+    <ClCompile Include="CarEyeSkinUI\SkinToolBar.cpp" />
+    <ClCompile Include="CarEyeSkinUI\SkinTreeCtrl.cpp" />
+    <ClCompile Include="CarEyeSkinUI\SkinUI.cpp" />
+    <ClCompile Include="CarEyeSkinUI\SkinUIMenu.cpp" />
+    <ClCompile Include="CarEyeSkinUI\SkinUI_ScrollBar.cpp" />
+    <ClCompile Include="CarEyeSkinUI\XmlManager.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="CarEyePlayer.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\libCarEyePlayer\libCarEyePlayer.vcxproj">
+      <Project>{bc0300e0-e5d5-4a49-88b4-4e79dff5f1cc}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="CarEyePlayer.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

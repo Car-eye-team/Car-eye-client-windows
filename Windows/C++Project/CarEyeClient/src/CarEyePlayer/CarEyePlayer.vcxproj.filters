@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="CarEyeSkinUI">
+      <UniqueIdentifier>{1de03d88-fdcc-440e-b1c6-3c955ddfa964}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\CarEyePlayer.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\CarEyePlayer.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="icon1.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="icon2.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\CarEyePlayer11.ico">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CarEyePlayer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyePlayerDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgVideo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgRender.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateDump.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\BuildDialog.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\detours.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\FlashControl.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\Function.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\GifImage.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\ImageEx.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\internal.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\ISkinControl.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\Macro.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\MemoryDC.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\RenderManager.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\resource.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\SkinButton.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\SkinComboBox.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\SkinDialog.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\SkinEdit.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\SkinListBox.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\SkinListCtrl.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\SkinProgressCtrl.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\SkinRichEdit.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\SkinSliderCtrl.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\SkinTabCtrl.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\SkinToolBar.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\SkinTreeCtrl.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\SkinUI.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\SkinUI_ScrollBar.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\SkinUIMenu.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\XmlManager.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CarEyeSkinUI\SkinStatic.h">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CarEyePlayer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CarEyePlayerDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgVideo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgRender.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateDump.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CarEyeSkinUI\BuildDialog.cpp">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClCompile>
+    <ClCompile Include="CarEyeSkinUI\FlashControl.cpp">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClCompile>
+    <ClCompile Include="CarEyeSkinUI\Function.cpp">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClCompile>
+    <ClCompile Include="CarEyeSkinUI\GifImage.cpp">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClCompile>
+    <ClCompile Include="CarEyeSkinUI\ImageEx.cpp">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClCompile>
+    <ClCompile Include="CarEyeSkinUI\ISkinControl.cpp">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClCompile>
+    <ClCompile Include="CarEyeSkinUI\MemoryDC.cpp">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClCompile>
+    <ClCompile Include="CarEyeSkinUI\RenderManager.cpp">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClCompile>
+    <ClCompile Include="CarEyeSkinUI\SkinButton.cpp">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClCompile>
+    <ClCompile Include="CarEyeSkinUI\SkinComboBox.cpp">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClCompile>
+    <ClCompile Include="CarEyeSkinUI\SkinDialog.cpp">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClCompile>
+    <ClCompile Include="CarEyeSkinUI\SkinEdit.cpp">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClCompile>
+    <ClCompile Include="CarEyeSkinUI\SkinListBox.cpp">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClCompile>
+    <ClCompile Include="CarEyeSkinUI\SkinListCtrl.cpp">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClCompile>
+    <ClCompile Include="CarEyeSkinUI\SkinProgressCtrl.cpp">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClCompile>
+    <ClCompile Include="CarEyeSkinUI\SkinRichEdit.cpp">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClCompile>
+    <ClCompile Include="CarEyeSkinUI\SkinSliderCtrl.cpp">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClCompile>
+    <ClCompile Include="CarEyeSkinUI\SkinTabCtrl.cpp">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClCompile>
+    <ClCompile Include="CarEyeSkinUI\SkinToolBar.cpp">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClCompile>
+    <ClCompile Include="CarEyeSkinUI\SkinTreeCtrl.cpp">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClCompile>
+    <ClCompile Include="CarEyeSkinUI\SkinUI.cpp">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClCompile>
+    <ClCompile Include="CarEyeSkinUI\SkinUI_ScrollBar.cpp">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClCompile>
+    <ClCompile Include="CarEyeSkinUI\SkinUIMenu.cpp">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClCompile>
+    <ClCompile Include="CarEyeSkinUI\XmlManager.cpp">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClCompile>
+    <ClCompile Include="CarEyeSkinUI\SkinStatic.cpp">
+      <Filter>CarEyeSkinUI</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="CarEyePlayer.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
