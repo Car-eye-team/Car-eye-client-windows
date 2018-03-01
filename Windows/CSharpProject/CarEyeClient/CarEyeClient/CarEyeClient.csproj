@@ -94,6 +94,8 @@
       <DependentUpon>DlgTrackRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="DVR\AVFrameFlag.cs" />
+    <Compile Include="DVR\CAREYE_MEDIA_INFO.cs" />
+    <Compile Include="DVR\CAREYE_PALYER_OSD.cs" />
     <Compile Include="DVR\DVRToken.cs" />
     <Compile Include="DVR\DVRPoint.cs" />
     <Compile Include="DVR\DVRRect.cs" />
@@ -105,7 +107,7 @@
     <Compile Include="DVR\RTSPViewer.Designer.cs">
       <DependentUpon>RTSPViewer.cs</DependentUpon>
     </Compile>
-    <Compile Include="DVR\RTSP_FRAME_INFO.cs" />
+    <Compile Include="DVR\CAREYE_RTSP_FRAME_INFO.cs" />
     <Compile Include="DVR\SplitScreenType.cs" />
     <Compile Include="FrmBase.cs">
       <SubType>Form</SubType>

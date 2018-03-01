@@ -136,7 +136,7 @@ namespace CarEyeClient.DVR
 			mVideoPath = aPath;
 			if (ChannelId > 0)
 			{
-				PlayerMethods.EasyPlayer_SetManuRecordPath(ChannelId, mVideoPath);
+				PlayerMethods.CarEyePlayer_SetManuRecordPath(ChannelId, mVideoPath);
 			}
 		}
 
@@ -153,7 +153,7 @@ namespace CarEyeClient.DVR
 			mImagePath = aPath;
 			if (ChannelId > 0)
 			{
-				PlayerMethods.EasyPlayer_SetManuPicShotPath(ChannelId, mImagePath);
+				PlayerMethods.CarEyePlayer_SetManuPicShotPath(ChannelId, mImagePath);
 			}
 		}
 
@@ -180,7 +180,7 @@ namespace CarEyeClient.DVR
 			}
 
 			// TCP连接 YUY2显示,软解码
-			ChannelId = PlayerMethods.EasyPlayer_OpenStream(this.Token.Url, this.lblView.Handle, RENDER_FORMAT.DISPLAY_FORMAT_YUY2,
+			ChannelId = PlayerMethods.CarEyePlayer_OpenStream(this.Token.Url, this.lblView.Handle, RENDER_FORMAT.DISPLAY_FORMAT_YUY2,
 								1, string.Empty, string.Empty,
 								mPlayerCallBack, this.Handle, false);
 
@@ -193,16 +193,16 @@ namespace CarEyeClient.DVR
 
 			// 设置缓存
 			// 最大帧缓存为30,超过该值将只播放I帧
-			PlayerMethods.EasyPlayer_SetFrameCache(ChannelId, 3);
+			PlayerMethods.CarEyePlayer_SetFrameCache(ChannelId, 3);
 			mParent.PlayChnSound(ChannelId);
 			// 按比例播放
-			PlayerMethods.EasyPlayer_SetShownToScale(ChannelId, 1);
+			PlayerMethods.CarEyePlayer_SetShownToScale(ChannelId, 1);
 
 			// 设置抓图和录制存放路径
 			GenRecordPath();
-			PlayerMethods.EasyPlayer_SetManuRecordPath(ChannelId, mVideoPath);
+			PlayerMethods.CarEyePlayer_SetManuRecordPath(ChannelId, mVideoPath);
 			GenScreenPath();
-			PlayerMethods.EasyPlayer_SetManuPicShotPath(ChannelId, mImagePath);
+			PlayerMethods.CarEyePlayer_SetManuPicShotPath(ChannelId, mImagePath);
 
 			this.btnPlay.Checked = true;
 			this.btnPlay.Enabled = true;
@@ -249,12 +249,12 @@ namespace CarEyeClient.DVR
 					LogAppend("正在停止视频录制...");
 					// 停止录像
 					this.btnRecord.Checked = false;
-					PlayerMethods.EasyPlayer_StopManuRecording(ChannelId);
+					PlayerMethods.CarEyePlayer_StopManuRecording(ChannelId);
 					LogAppend("视频录制已停止.");
 				}
 
 				// 预览停止代码
-				PlayerMethods.EasyPlayer_CloseStream(ChannelId);
+				PlayerMethods.CarEyePlayer_CloseStream(ChannelId);
 				UrlApiHelper.ControlVideo(Token.TerminalId, Token.LogicChn, VedioControlType.Stop);
 				ChannelId = -1;
 			}
@@ -276,10 +276,10 @@ namespace CarEyeClient.DVR
 		/// <param name="log"></param>
 		/// <param name="frameInfo"></param>
 		/// <returns></returns>
-		private static int EasyPlayerCallBack(int channelId, IntPtr channelPtr, int frameType, string log, [MarshalAs(UnmanagedType.LPArray)] RTSP_FRAME_INFO[] frameInfo)
+		private static int EasyPlayerCallBack(int channelId, IntPtr channelPtr, int frameType, string log, [MarshalAs(UnmanagedType.LPArray)] CAREYE_RTSP_FRAME_INFO[] frameInfo)
 		{
 			// 在该回调方法中如果需要进行Invoke操作的话必须要使用BeginInvoke,否则将卡死...
-			if (frameType == AVFrameFlag.EASY_SDK_EVENT_FRAME_FLAG)
+			if (frameType == AVFrameFlag.CAREYE_SDK_EVENT_FRAME_FLAG)
 			{
 				RTSPViewer tmpViewer = (RTSPViewer)FromHandle(channelPtr);
 				if (tmpViewer == null || tmpViewer.IsDisposed)
@@ -287,7 +287,7 @@ namespace CarEyeClient.DVR
 					return 0;
 				}
 				
-				if (frameInfo != null && frameInfo[0].codec == AVFrameFlag.EASY_SDK_EVENT_CODEC_EXIT)
+				if (frameInfo != null && frameInfo[0].codec == AVFrameFlag.CAREYE_SDK_EVENT_CODEC_EXIT)
 				{
 					tmpViewer.UpdateDisplayStatus();
 				}
@@ -350,7 +350,7 @@ namespace CarEyeClient.DVR
 			if (ChannelId > 0)
 			{
 				// 相应资源回收处理代码
-				PlayerMethods.EasyPlayer_CloseStream(ChannelId);
+				PlayerMethods.CarEyePlayer_CloseStream(ChannelId);
 				ChannelId = -1;
 			}
 			base.OnHandleDestroyed(e);
@@ -400,7 +400,7 @@ namespace CarEyeClient.DVR
 			}
 
 			// 视频截图
-			if (PlayerMethods.EasyPlayer_StartManuPicShot(ChannelId) > 0)
+			if (PlayerMethods.CarEyePlayer_StartManuPicShot(ChannelId) > 0)
 			{
 				LogAppend("已成功抓取拍照！");
 			}
@@ -422,7 +422,7 @@ namespace CarEyeClient.DVR
 			{
 				// 停止录像
 				this.btnRecord.Checked = false;
-				PlayerMethods.EasyPlayer_StopManuRecording(ChannelId);
+				PlayerMethods.CarEyePlayer_StopManuRecording(ChannelId);
 				LogAppend("视频录制已停止.");
 			}
 			else
@@ -441,7 +441,7 @@ namespace CarEyeClient.DVR
 						Directory.CreateDirectory(mVideoPath);
 					}
 					// 开始录像
-					if (PlayerMethods.EasyPlayer_StartManuRecording(ChannelId) > 0)
+					if (PlayerMethods.CarEyePlayer_StartManuRecording(ChannelId) > 0)
 					{
 						LogAppend("开始录制视频...");
 						this.btnRecord.Checked = true;
@@ -498,7 +498,7 @@ namespace CarEyeClient.DVR
 			if (this.btnSound.Checked)
 			{
 				this.btnSound.Checked = false;
-				PlayerMethods.EasyPlayer_StopSound();
+				PlayerMethods.CarEyePlayer_StopSound();
 				return;
 			}
 			mParent.PlayChnSound(ChannelId);

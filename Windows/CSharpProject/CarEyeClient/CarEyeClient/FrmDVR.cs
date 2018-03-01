@@ -74,7 +74,7 @@ namespace CarEyeClient
 		/// <param name="e"></param>
 		private void FrmDVR_Load(object sender, EventArgs e)
 		{
-			PlayerMethods.EasyPlayer_Init();
+			PlayerMethods.CarEyePlayer_Init();
 			for (int i = 0; i < MaxViewerCount; i++)
 			{
 				RTSPViewer tmpViewer = new RTSPViewer(this);
@@ -479,7 +479,7 @@ namespace CarEyeClient
 					}
 				}
 				// 释放资源
-				PlayerMethods.EasyPlayer_Release();
+				PlayerMethods.CarEyePlayer_Release();
 			}));
 		}
 
@@ -494,7 +494,7 @@ namespace CarEyeClient
 				return;
 			}
 
-			PlayerMethods.EasyPlayer_PlaySound(aChannelId);
+			PlayerMethods.CarEyePlayer_PlaySound(aChannelId);
 
 			foreach (var tmpItem in mViewers)
 			{

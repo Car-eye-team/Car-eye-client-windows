@@ -1,0 +1,71 @@
+
+Dump of file libCarEyePlayer.dll
+
+File Type: DLL
+
+  Section contains the following exports for libCarEyePlayer.dll
+
+    00000000 characteristics
+    5A9753AF time date stamp Thu Mar  1 09:13:19 2018
+        0.00 version
+           1 ordinal base
+          48 number of functions
+          48 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00005F50 ?CarEyePlayer_CloseStream@@YAXH@Z
+          2    1 00006110 ?CarEyePlayer_GetMediaInfo@@YAHHAAUtagCAREYE_MEDIA_INFO@@@Z
+          3    2 00005E40 ?CarEyePlayer_Init@@YAHXZ
+          4    3 00005F10 ?CarEyePlayer_OpenStream@@YAHPBDPAUHWND__@@W4__RENDER_FORMAT@@H00P6GHHPAHHPADPAUCAREYE_RTSP_FRAME_INFO@@@ZPAX_N@Z
+          5    4 000061C0 ?CarEyePlayer_PlaySound@@YAHH@Z
+          6    5 00005EF0 ?CarEyePlayer_Release@@YAXXZ
+          7    6 000061A0 ?CarEyePlayer_ResetDragPoint@@YAHH@Z
+          8    7 00005FF0 ?CarEyePlayer_SetDecodeType@@YAHHH@Z
+          9    8 00006170 ?CarEyePlayer_SetDragEndPoint@@YAHHUtagPOINT@@@Z
+         10    9 00006140 ?CarEyePlayer_SetDragStartPoint@@YAHHUtagPOINT@@@Z
+         11    A 00005F70 ?CarEyePlayer_SetFrameCache@@YAHHH@Z
+         12    B 00006280 ?CarEyePlayer_SetManuPicShotPath@@YAHHPBD@Z
+         13    C 00006260 ?CarEyePlayer_SetManuRecordPath@@YAHHPBD@Z
+         14    D 00006030 ?CarEyePlayer_SetRenderRect@@YAHHPAUtagRECT@@@Z
+         15    E 00005FB0 ?CarEyePlayer_SetShownToScale@@YAHHH@Z
+         16    F 000060D0 ?CarEyePlayer_ShowOSD@@YAHHHUtagCAREYE_PALYER_OSD@@@Z
+         17   10 00006090 ?CarEyePlayer_ShowStatisticalInfo@@YAHHH@Z
+         18   11 000062A0 ?CarEyePlayer_StartManuPicShot@@YAHH@Z
+         19   12 00006220 ?CarEyePlayer_StartManuRecording@@YAHH@Z
+         20   13 000062E0 ?CarEyePlayer_StopManuPicShot@@YAHH@Z
+         21   14 00006240 ?CarEyePlayer_StopManuRecording@@YAHH@Z
+         22   15 000061E0 ?CarEyePlayer_StopSound@@YAHXZ
+         33   16 00007B60 MP4C_AddFrame
+         34   17 00007BA0 MP4C_CloseMp4File
+         35   18 00007B40 MP4C_CreateMp4File
+         36   19 00007BC0 MP4C_Deinit
+         37   1A 00007BF0 MP4C_GetSPSPPS
+         38   1B 000079D0 MP4C_Init
+         39   1C 00007AB0 MP4C_SetH264Pps
+         40   1D 00007A70 MP4C_SetH264Sps
+         41   1E 00007B00 MP4C_SetMp4AudioInfo
+         42   1F 00007A10 MP4C_SetMp4VideoInfo
+         43   20 0000DCC0 NVS_CloseStream
+         44   21 0000DA90 NVS_Deinit
+         45   22 0000DAC0 NVS_GetErrCode
+         46   23 0000DA00 NVS_Init
+         47   24 0000DB00 NVS_OpenStream
+         48   25 0000DAE0 NVS_SetCallback
+         23   26 0000D630 _EasyRTSP_Activate@4
+         24   27 0000D8E0 _EasyRTSP_CloseStream@4
+         25   28 0000D7E0 _EasyRTSP_Deinit@4
+         26   29 0000D600 _EasyRTSP_GetErrCode@4
+         27   2A 0000D780 _EasyRTSP_Init@4
+         28   2B 0000D850 _EasyRTSP_OpenStream@48
+         29   2C 0000D830 _EasyRTSP_SetCallback@8
+         30   2D 0005C5A0 _Easy_AACEncoder_Encode@20
+         31   2E 0005C4F0 _Easy_AACEncoder_Init@16
+         32   2F 0005C5E0 _Easy_AACEncoder_Release@4
+
+  Summary
+
+        B000 .data
+       12000 .rdata
+        7000 .reloc
+       6E000 .text
