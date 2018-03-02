@@ -6,7 +6,7 @@ File Type: DLL
   Section contains the following exports for libCarEyePlayer.dll
 
     00000000 characteristics
-    5A9753AF time date stamp Thu Mar  1 09:13:19 2018
+    5A990404 time date stamp Fri Mar  2 15:57:56 2018
         0.00 version
            1 ordinal base
           48 number of functions
@@ -16,7 +16,7 @@ File Type: DLL
 
           1    0 00005F50 ?CarEyePlayer_CloseStream@@YAXH@Z
           2    1 00006110 ?CarEyePlayer_GetMediaInfo@@YAHHAAUtagCAREYE_MEDIA_INFO@@@Z
-          3    2 00005E40 ?CarEyePlayer_Init@@YAHXZ
+          3    2 00005E40 ?CarEyePlayer_Init@@YAHPBD@Z
           4    3 00005F10 ?CarEyePlayer_OpenStream@@YAHPBDPAUHWND__@@W4__RENDER_FORMAT@@H00P6GHHPAHHPADPAUCAREYE_RTSP_FRAME_INFO@@@ZPAX_N@Z
           5    4 000061C0 ?CarEyePlayer_PlaySound@@YAHH@Z
           6    5 00005EF0 ?CarEyePlayer_Release@@YAXXZ

@@ -74,7 +74,7 @@ namespace CarEyeClient
 		/// <param name="e"></param>
 		private void FrmDVR_Load(object sender, EventArgs e)
 		{
-			PlayerMethods.CarEyePlayer_Init();
+			int tmpRes = PlayerMethods.CarEyePlayer_Init(GlobalCfg.DVRKey);
 			for (int i = 0; i < MaxViewerCount; i++)
 			{
 				RTSPViewer tmpViewer = new RTSPViewer(this);
@@ -88,7 +88,6 @@ namespace CarEyeClient
 			// 默认切换到全屏
 			btnLayout_Click(btnFour, null);
 		}
-
 
 		/// <summary>
 		/// 双击Viewer触发参数

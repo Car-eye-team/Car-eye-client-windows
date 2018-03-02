@@ -10,6 +10,11 @@ namespace CarEyeClient
 	internal static class GlobalCfg
 	{
 		/// <summary>
+		/// Player库密钥
+		/// </summary>
+		public const string DVRKey = "79393674363469576B5A73416C4A6861705764727065394459584A466557564462476C6C626E51755A58686C766C634D5671442F7065424859585A7062695A4359574A76633246414D6A41784E6B566863336C4559584A33615735555A5746745A57467A65513D3D";
+
+		/// <summary>
 		/// 获取本项目的标题
 		/// </summary>
 		public static string Title

@@ -22,9 +22,10 @@ namespace CarEyeClient.DVR
 		/// <summary>
 		/// 播放器初始化
 		/// </summary>
+		/// <param name="key">有效的激活密钥</param>
 		/// <returns></returns>
-		[DllImport("libCarEyePlayer.dll", EntryPoint = "?CarEyePlayer_Init@@YAHXZ")]
-		public static extern int CarEyePlayer_Init();
+		[DllImport("libCarEyePlayer.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?CarEyePlayer_Init@@YAHPBD@Z")]
+		public static extern int CarEyePlayer_Init([In()] [MarshalAs(UnmanagedType.LPStr)] string key);
 
 		/// <summary>
 		/// 释放播放器
