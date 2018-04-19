@@ -9,5 +9,16 @@ car-eye 客户端主要用于车辆管理系统客户端子系统的源码和设
 
 # 联系我们
 
-car-eye 开源官方网址：www.car-eye.cn; car-eye开源源码下载网址：https://github.com/Car-eye-team 有关car-eye 问题咨询可以加QQ群590411159。
+car-eye 开源官方网址：www.car-eye.cn    
+
+car-eye 流媒体平台网址：www.liveoss.com  
+
+car-eye 技术官方邮箱: support@car-eye.cn
+
+car-eye技术交流QQ群: 590411159        
+
+![](https://github.com/Car-eye-team/Car-eye-server/blob/master/car-server/doc/QQ.jpg)  
+
+
+CopyRight©  car-eye 开源团队 2018
 
