@@ -36,6 +36,7 @@ namespace CarEyeClient
 			// 添加本实例指定的JS代码
 			this.wbMap.JsCode = MapHelper.GetMainMap();
 			mParent = aParent;
+			IEUtils.SetWebBrowserFeatures();
 		}
 		
 		/// <summary>
